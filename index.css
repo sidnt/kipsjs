@@ -1,0 +1,17 @@
+#redstar {
+  color: red;
+}
+
+.container {
+  border: 1px dotted #aaa;
+}
+
+.redBoundary {
+  border: 1px solid red;
+}
+
+.genderSelection {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+}

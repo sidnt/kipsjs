@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+        crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+
+  <title>JSAssignment</title>
+</head>
+<body>
+
+<div class="jumbotron">JQuery Assignment</div>
+
+<div class="container">
+  
+  <div>
+    <span>First Name</span><span id="redstar">*</span>
+    <input id="fname" type="text" placeholder="Required"></input>
+  </div>
+  <br>
+  <div>
+    <span>Last Name</span>
+    <input id="lname" type="text" placeholder="Optional"></input>
+  </div>  
+  <br>
+  <div>
+    <span>Email</span><span id="redstar">*</span>
+    <input id="email" type="email" placeholder="Valid Email Required"></input>
+  </div>
+  <br>
+  <div>
+    <span>Confirm Email</span><span id="redstar">*</span>
+    <input id="confirmEmail" type="email" placeholder="Same Email Required"></input>
+  </div>
+  <br>
+  <div>
+    <span>Gender</span><span id="redstar">*</span>
+    <span id="gender">
+      <input type="radio" name="genderRadios">Male</input>
+      <input type="radio" name="genderRadios">Female</input>
+      <input type="radio" name="genderRadios">Other</input>
+    </span>
+  </div>
+  <br> 
+  <div>
+    <span>Phone</span><span id="redstar">*</span>
+    <input id="phone" type="number" name="phonenumber" placeholder="10digit ph.no. required"></input>
+  </div>
+  <br>
+  <button id="submitButton" class="btn-primary">Submit</button>
+
+  <br>
+  <br><br><br><br>
+
+  
+
+Field
+Type
+Mendatory
+Validation<br>
+
+First name
+Input text box
+Yes
+Must not be empty<br>
+
+Last name
+Input text box
+optional
+Can be empty<br>
+
+Email
+Input text box
+Yes
+Must be a valid email format<br>
+
+Confirm Email
+Input text box
+Yes
+Must be a valid email format and match email field<br>
+
+gender
+Radio buttons
+Yes 
+Must not be empty<br>
+
+phone
+Input text box 
+yes
+Must contain a 10 digit number only
+
+</div>
+<script src="./out/index/fastOpt/dest/out.js"></script>
+</body>
+</html>
