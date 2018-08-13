@@ -1,12 +1,15 @@
 package index
 import scala.scalajs.js.annotation.JSExportTopLevel
+import scala.scalajs.js
 import io.udash.wrappers.jquery._
+import org.scalajs.dom, dom.document
 import org.querki.jquery._
 import validations._
+import scalatags.JsDom.all._
 
 object HWApp {
   def main(args: Array[String]): Unit = {
-    println("Hello world!")
+    println("Hello world!aa")
     //jQ("#submitButton").click(validateForm())
     $("#submitButton").click(() => validate())
     //jQ("#submitButton").on("click", validateForm())
@@ -20,6 +23,32 @@ object HWApp {
     
   }
 
+  @JSExportTopLevel("makeRequest")
+  def makeRequest() = {
+    val xhr = new dom.XMLHttpRequest()
+    xhr.open("GET",
+      "https://reqres.in/api/users/10"
+    )
+    xhr.onload = (e: dom.Event) => {
+      if (xhr.status == 200) {
+        val json = js.JSON.parse(
+          xhr.responseText
+        )
+        val displayFrag = div(
+          img(src:=json.data.avatar),
+          p(json.data.first_name.toString),
+          p(json.data.last_name.toString),
+        )
+        document.write(displayFrag.toString)
+        // target.appendChild(
+        //   pre(xhr.responseText).render
+        // )
+      }
+    }
+    xhr.send()
+  }
+
+  
   
   def validate() = {
     val idsToUnredden = Seq("fname", "lname", "email", "confirmEmail", "gender", "phone")
@@ -58,6 +87,7 @@ object HWApp {
         redden("email"); allValid = false
       }
     }
+    if(allValid) makeRequest()
     allValid
   }
   

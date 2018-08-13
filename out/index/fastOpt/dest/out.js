@@ -1102,6 +1102,42 @@ function $f_F2__toString__T($thiz) {
 function $f_F2__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_DataConverters__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_LowPriorityImplicits__bindJsAnyLike__F1__Lscalatags_generic_AttrValue($thiz, ev) {
+  return new $c_Lscalatags_LowPriorityImplicits$$anon$2().init___Lscalatags_LowPriorityImplicits__F1($thiz, ev)
+}
+function $f_Lscalatags_LowPriorityImplicits__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_LowPriUtil__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $is_Lscalatags_generic_Modifier(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_generic_Modifier)))
+}
+function $as_Lscalatags_generic_Modifier(obj) {
+  return (($is_Lscalatags_generic_Modifier(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.generic.Modifier"))
+}
+function $isArrayOf_Lscalatags_generic_Modifier(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_generic_Modifier)))
+}
+function $asArrayOf_Lscalatags_generic_Modifier(obj, depth) {
+  return (($isArrayOf_Lscalatags_generic_Modifier(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.generic.Modifier;", depth))
+}
+function $is_Lscalatags_generic_Namespace(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_generic_Namespace)))
+}
+function $as_Lscalatags_generic_Namespace(obj) {
+  return (($is_Lscalatags_generic_Namespace(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.generic.Namespace"))
+}
+function $isArrayOf_Lscalatags_generic_Namespace(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_generic_Namespace)))
+}
+function $asArrayOf_Lscalatags_generic_Namespace(obj, depth) {
+  return (($isArrayOf_Lscalatags_generic_Namespace(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.generic.Namespace;", depth))
+}
 /** @constructor */
 function $c_O() {
   /*<skip>*/
@@ -1486,12 +1522,23 @@ function $h_Lindex_HWApp$() {
 }
 $h_Lindex_HWApp$.prototype = $c_Lindex_HWApp$.prototype;
 $c_Lindex_HWApp$.prototype.main__AT__V = (function(args) {
-  $m_s_Predef$().println__O__V("Hello world!");
+  $m_s_Predef$().println__O__V("Hello world!aa");
   $m_Lorg_querki_jquery_package$().$$__Lorg_querki_jquery_JQueryStatic$()($m_sjs_js_$bar$().from__O__sjs_js_$bar$Evidence__sjs_js_$bar("#submitButton", $m_sjs_js_$bar$Evidence$().left__sjs_js_$bar$Evidence__sjs_js_$bar$Evidence($m_sjs_js_$bar$Evidence$().left__sjs_js_$bar$Evidence__sjs_js_$bar$Evidence($m_sjs_js_$bar$Evidence$().left__sjs_js_$bar$Evidence__sjs_js_$bar$Evidence($m_sjs_js_$bar$Evidence$().base__sjs_js_$bar$Evidence()))))).click($m_Lorg_querki_jquery_package$().f02EventHandler__F0__sjs_js_$bar(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
     return (function() {
       return $this.$$anonfun$main$1__p1__Z()
     })
   })(this))))
+});
+$c_Lindex_HWApp$.prototype.makeRequest__V = (function() {
+  var xhr = new $g.XMLHttpRequest();
+  xhr.open("GET", "https://reqres.in/api/users/10");
+  xhr.onload = (function(xhr$1) {
+    return (function(arg1$2) {
+      var arg1 = arg1$2;
+      return $m_Lindex_HWApp$().index$HWApp$$$anonfun$makeRequest$1__Lorg_scalajs_dom_raw_Event__Lorg_scalajs_dom_raw_XMLHttpRequest__O(arg1, xhr$1)
+    })
+  })(xhr);
+  xhr.send()
 });
 $c_Lindex_HWApp$.prototype.validate__Z = (function() {
   var idsToUnredden = $as_sc_Seq($m_sc_Seq$().apply__sc_Seq__sc_GenTraversable($m_sjsr_package$().toScalaVarArgs__sjs_js_Array__sc_Seq(["fname", "lname", "email", "confirmEmail", "gender", "phone"])));
@@ -1529,6 +1576,9 @@ $c_Lindex_HWApp$.prototype.validate__Z = (function() {
       allValid = false
     }
   };
+  if (allValid) {
+    this.makeRequest__V()
+  };
   return allValid
 });
 $c_Lindex_HWApp$.prototype.greet__V = (function() {
@@ -1551,6 +1601,16 @@ $c_Lindex_HWApp$.prototype.echo__T__V = (function(id) {
 });
 $c_Lindex_HWApp$.prototype.$$anonfun$main$1__p1__Z = (function() {
   return $m_Lindex_HWApp$().validate__Z()
+});
+$c_Lindex_HWApp$.prototype.index$HWApp$$$anonfun$makeRequest$1__Lorg_scalajs_dom_raw_Event__Lorg_scalajs_dom_raw_XMLHttpRequest__O = (function(e, xhr$1) {
+  if (($uI(xhr$1.status) === 200)) {
+    var json = $g.JSON.parse($as_T(xhr$1.responseText));
+    var displayFrag = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sjsr_package$().toScalaVarArgs__sjs_js_Array__sc_Seq([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().img__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sjsr_package$().toScalaVarArgs__sjs_js_Array__sc_Seq([$m_Lscalatags_JsDom$all$().src__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(json.data.avatar, $m_Lscalatags_JsDom$all$().bindJsAnyLike__F1__Lscalatags_generic_AttrValue($m_s_Predef$().$$conforms__s_Predef$$less$colon$less()))])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().p__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sjsr_package$().toScalaVarArgs__sjs_js_Array__sc_Seq([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag($objectToString(json.data.first_name))])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().p__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sjsr_package$().toScalaVarArgs__sjs_js_Array__sc_Seq([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag($objectToString(json.data.last_name))]))]));
+    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().write(displayFrag.toString__T());
+    return (void 0)
+  } else {
+    return (void 0)
+  }
 });
 $c_Lindex_HWApp$.prototype.$$anonfun$validate$1__p1__T__V = (function(x$1) {
   $m_Lindex_HWApp$().unredden__T__V(x$1)
@@ -1710,6 +1770,220 @@ function $m_Lorg_querki_jquery_package$() {
     $n_Lorg_querki_jquery_package$ = new $c_Lorg_querki_jquery_package$().init___()
   };
   return $n_Lorg_querki_jquery_package$
+}
+/** @constructor */
+function $c_Lorg_scalajs_dom_package$() {
+  $c_O.call(this);
+  this.ApplicationCache$1 = null;
+  this.Blob$1 = null;
+  this.BlobPropertyBag$1 = null;
+  this.ClipboardEventInit$1 = null;
+  this.DOMException$1 = null;
+  this.Event$1 = null;
+  this.EventException$1 = null;
+  this.EventSource$1 = null;
+  this.FileReader$1 = null;
+  this.FormData$1 = null;
+  this.KeyboardEvent$1 = null;
+  this.MediaError$1 = null;
+  this.MutationEvent$1 = null;
+  this.MutationObserverInit$1 = null;
+  this.Node$1 = null;
+  this.NodeFilter$1 = null;
+  this.PerformanceNavigation$1 = null;
+  this.PositionError$1 = null;
+  this.Range$1 = null;
+  this.TextEvent$1 = null;
+  this.TextTrack$1 = null;
+  this.URL$1 = null;
+  this.VisibilityState$1 = null;
+  this.WebSocket$1 = null;
+  this.WheelEvent$1 = null;
+  this.XMLHttpRequest$1 = null;
+  this.XPathResult$1 = null;
+  this.window$1 = null;
+  this.document$1 = null;
+  this.console$1 = null;
+  this.bitmap$0$1 = 0
+}
+$c_Lorg_scalajs_dom_package$.prototype = new $h_O();
+$c_Lorg_scalajs_dom_package$.prototype.constructor = $c_Lorg_scalajs_dom_package$;
+/** @constructor */
+function $h_Lorg_scalajs_dom_package$() {
+  /*<skip>*/
+}
+$h_Lorg_scalajs_dom_package$.prototype = $c_Lorg_scalajs_dom_package$.prototype;
+$c_Lorg_scalajs_dom_package$.prototype.window$lzycompute__p1__Lorg_scalajs_dom_raw_Window = (function() {
+  if (((this.bitmap$0$1 & 134217728) === 0)) {
+    this.window$1 = $m_sjs_js_Dynamic$().global__sjs_js_Dynamic().window;
+    this.bitmap$0$1 = (this.bitmap$0$1 | 134217728)
+  };
+  return this.window$1
+});
+$c_Lorg_scalajs_dom_package$.prototype.window__Lorg_scalajs_dom_raw_Window = (function() {
+  return (((this.bitmap$0$1 & 134217728) === 0) ? this.window$lzycompute__p1__Lorg_scalajs_dom_raw_Window() : this.window$1)
+});
+$c_Lorg_scalajs_dom_package$.prototype.document$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLDocument = (function() {
+  if (((this.bitmap$0$1 & 268435456) === 0)) {
+    this.document$1 = this.window__Lorg_scalajs_dom_raw_Window().document;
+    this.bitmap$0$1 = (this.bitmap$0$1 | 268435456)
+  };
+  return this.document$1
+});
+$c_Lorg_scalajs_dom_package$.prototype.document__Lorg_scalajs_dom_raw_HTMLDocument = (function() {
+  return (((this.bitmap$0$1 & 268435456) === 0) ? this.document$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLDocument() : this.document$1)
+});
+$c_Lorg_scalajs_dom_package$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lorg_scalajs_dom_package$ = this;
+  return this
+});
+var $d_Lorg_scalajs_dom_package$ = new $TypeData().initClass({
+  Lorg_scalajs_dom_package$: 0
+}, false, "org.scalajs.dom.package$", {
+  Lorg_scalajs_dom_package$: 1,
+  O: 1
+});
+$c_Lorg_scalajs_dom_package$.prototype.$classData = $d_Lorg_scalajs_dom_package$;
+var $n_Lorg_scalajs_dom_package$ = (void 0);
+function $m_Lorg_scalajs_dom_package$() {
+  if ((!$n_Lorg_scalajs_dom_package$)) {
+    $n_Lorg_scalajs_dom_package$ = new $c_Lorg_scalajs_dom_package$().init___()
+  };
+  return $n_Lorg_scalajs_dom_package$
+}
+/** @constructor */
+function $c_Lscalatags_Escaping$() {
+  $c_O.call(this);
+  this.tagRegex$1 = null
+}
+$c_Lscalatags_Escaping$.prototype = new $h_O();
+$c_Lscalatags_Escaping$.prototype.constructor = $c_Lscalatags_Escaping$;
+/** @constructor */
+function $h_Lscalatags_Escaping$() {
+  /*<skip>*/
+}
+$h_Lscalatags_Escaping$.prototype = $c_Lscalatags_Escaping$.prototype;
+$c_Lscalatags_Escaping$.prototype.validTag__T__Z = (function(s) {
+  return this.tagRegex$1.unapplySeq__jl_CharSequence__s_Option(s).isDefined__Z()
+});
+$c_Lscalatags_Escaping$.prototype.validAttrName__T__Z = (function(s) {
+  var len = $m_sjsr_RuntimeString$().length__T__I(s);
+  if ((len === 0)) {
+    return false
+  };
+  var sc = $m_sjsr_RuntimeString$().charAt__T__I__C(s, 0);
+  var startCharValid = ((((sc >= 97) && (sc <= 122)) || ((sc >= 65) && (sc <= 90))) || (sc === 58));
+  if ((!startCharValid)) {
+    return false
+  };
+  var pos = 1;
+  while ((pos < len)) {
+    var c = $m_sjsr_RuntimeString$().charAt__T__I__C(s, pos);
+    var valid = ((((((((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90))) || ((c >= 48) && (c <= 57))) || (c === 45)) || (c === 58)) || (c === 46)) || (c === 95));
+    if ((!valid)) {
+      return false
+    };
+    pos = ((pos + 1) | 0)
+  };
+  return true
+});
+$c_Lscalatags_Escaping$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_Escaping$ = this;
+  this.tagRegex$1 = new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T("^[a-z][\\w0-9-]*$")).r__s_util_matching_Regex();
+  return this
+});
+var $d_Lscalatags_Escaping$ = new $TypeData().initClass({
+  Lscalatags_Escaping$: 0
+}, false, "scalatags.Escaping$", {
+  Lscalatags_Escaping$: 1,
+  O: 1
+});
+$c_Lscalatags_Escaping$.prototype.$classData = $d_Lscalatags_Escaping$;
+var $n_Lscalatags_Escaping$ = (void 0);
+function $m_Lscalatags_Escaping$() {
+  if ((!$n_Lscalatags_Escaping$)) {
+    $n_Lscalatags_Escaping$ = new $c_Lscalatags_Escaping$().init___()
+  };
+  return $n_Lscalatags_Escaping$
+}
+function $f_Lscalatags_generic_Aggregate__$$init$__V($thiz) {
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$stringAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$booleanAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$byteAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$shortAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$intAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$longAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$floatAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$doubleAttr$und$eq__Lscalatags_generic_AttrValue__V($thiz.genericAttr__Lscalatags_generic_AttrValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$stringStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$booleanStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$byteStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$shortStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$intStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$longStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$floatStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$doubleStyle$und$eq__Lscalatags_generic_StyleValue__V($thiz.genericStyle__Lscalatags_generic_StyleValue());
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$stringPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStyle__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$booleanPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStyle__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.booleanStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$bytePixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$shortPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$intPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$longPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$floatPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()));
+  $thiz.scalatags$generic$Aggregate$$undsetter$und$doublePixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V($thiz.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz.stringStyle__Lscalatags_generic_StyleValue()))
+}
+/** @constructor */
+function $c_Lscalatags_generic_Namespace$() {
+  $c_O.call(this);
+  this.htmlNamespaceConfig$1 = null;
+  this.svgNamespaceConfig$1 = null;
+  this.svgXlinkNamespaceConfig$1 = null
+}
+$c_Lscalatags_generic_Namespace$.prototype = new $h_O();
+$c_Lscalatags_generic_Namespace$.prototype.constructor = $c_Lscalatags_generic_Namespace$;
+/** @constructor */
+function $h_Lscalatags_generic_Namespace$() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_Namespace$.prototype = $c_Lscalatags_generic_Namespace$.prototype;
+$c_Lscalatags_generic_Namespace$.prototype.htmlNamespaceConfig__Lscalatags_generic_Namespace = (function() {
+  return this.htmlNamespaceConfig$1
+});
+$c_Lscalatags_generic_Namespace$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_generic_Namespace$ = this;
+  this.htmlNamespaceConfig$1 = new $c_Lscalatags_generic_Namespace$$anon$2().init___();
+  this.svgNamespaceConfig$1 = new $c_Lscalatags_generic_Namespace$$anon$1().init___();
+  this.svgXlinkNamespaceConfig$1 = new $c_Lscalatags_generic_Namespace$$anon$3().init___();
+  return this
+});
+var $d_Lscalatags_generic_Namespace$ = new $TypeData().initClass({
+  Lscalatags_generic_Namespace$: 0
+}, false, "scalatags.generic.Namespace$", {
+  Lscalatags_generic_Namespace$: 1,
+  O: 1
+});
+$c_Lscalatags_generic_Namespace$.prototype.$classData = $d_Lscalatags_generic_Namespace$;
+var $n_Lscalatags_generic_Namespace$ = (void 0);
+function $m_Lscalatags_generic_Namespace$() {
+  if ((!$n_Lscalatags_generic_Namespace$)) {
+    $n_Lscalatags_generic_Namespace$ = new $c_Lscalatags_generic_Namespace$().init___()
+  };
+  return $n_Lscalatags_generic_Namespace$
+}
+function $f_Lscalatags_generic_Util__attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr($thiz, s, ns, raw) {
+  return new $c_Lscalatags_generic_Attr().init___T__s_Option__Z(s, $m_s_Option$().apply__O__s_Option(ns), raw)
+}
+function $f_Lscalatags_generic_Util__attr$default$2__Lscalatags_generic_Namespace($thiz) {
+  return null
+}
+function $f_Lscalatags_generic_Util__attr$default$3__Z($thiz) {
+  return false
+}
+function $f_Lscalatags_generic_Util__$$init$__V($thiz) {
+  /*<skip>*/
 }
 /** @constructor */
 function $c_jl_Class() {
@@ -2346,6 +2620,43 @@ function $m_ju_Arrays$() {
     $n_ju_Arrays$ = new $c_ju_Arrays$().init___()
   };
   return $n_ju_Arrays$
+}
+/** @constructor */
+function $c_ju_Objects$() {
+  $c_O.call(this)
+}
+$c_ju_Objects$.prototype = new $h_O();
+$c_ju_Objects$.prototype.constructor = $c_ju_Objects$;
+/** @constructor */
+function $h_ju_Objects$() {
+  /*<skip>*/
+}
+$h_ju_Objects$.prototype = $c_ju_Objects$.prototype;
+$c_ju_Objects$.prototype.requireNonNull__O__O = (function(obj) {
+  if ((obj === null)) {
+    throw new $c_jl_NullPointerException().init___()
+  } else {
+    return obj
+  }
+});
+$c_ju_Objects$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_ju_Objects$ = this;
+  return this
+});
+var $d_ju_Objects$ = new $TypeData().initClass({
+  ju_Objects$: 0
+}, false, "java.util.Objects$", {
+  ju_Objects$: 1,
+  O: 1
+});
+$c_ju_Objects$.prototype.$classData = $d_ju_Objects$;
+var $n_ju_Objects$ = (void 0);
+function $m_ju_Objects$() {
+  if ((!$n_ju_Objects$)) {
+    $n_ju_Objects$ = new $c_ju_Objects$().init___()
+  };
+  return $n_ju_Objects$
 }
 /** @constructor */
 function $c_s_DeprecatedConsole() {
@@ -3623,8 +3934,21 @@ $c_sjs_js_UndefOrOps$.prototype.get$extension__sjs_js_UndefOr__O = (function($$t
 $c_sjs_js_UndefOrOps$.prototype.forceGet$extension__sjs_js_UndefOr__O = (function($$this) {
   return $$this
 });
+$c_sjs_js_UndefOrOps$.prototype.getOrElse$extension__sjs_js_UndefOr__F0__O = (function($$this, $default) {
+  return ($m_sjs_js_UndefOrOps$().isEmpty$extension__sjs_js_UndefOr__Z($$this) ? $default.apply__O() : $m_sjs_js_UndefOrOps$().forceGet$extension__sjs_js_UndefOr__O($$this))
+});
+$c_sjs_js_UndefOrOps$.prototype.orNull$extension__sjs_js_UndefOr__s_Predef$$less$colon$less__O = (function($$this, ev) {
+  return $m_sjs_js_UndefOrOps$().getOrElse$extension__sjs_js_UndefOr__F0__O($$this, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, ev) {
+    return (function() {
+      return $this.$$anonfun$orNull$extension$1__p1__s_Predef$$less$colon$less__O(ev)
+    })
+  })(this, ev)))
+});
 $c_sjs_js_UndefOrOps$.prototype.fold$extension__sjs_js_UndefOr__F0__F1__O = (function($$this, ifEmpty, f) {
   return ($m_sjs_js_UndefOrOps$().isEmpty$extension__sjs_js_UndefOr__Z($$this) ? ifEmpty.apply__O() : f.apply__O__O($m_sjs_js_UndefOrOps$().forceGet$extension__sjs_js_UndefOr__O($$this)))
+});
+$c_sjs_js_UndefOrOps$.prototype.$$anonfun$orNull$extension$1__p1__s_Predef$$less$colon$less__O = (function(ev$1) {
+  return ev$1.apply__O__O(null)
 });
 $c_sjs_js_UndefOrOps$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
@@ -3986,8 +4310,17 @@ $c_sjsr_RuntimeString$.prototype.hashCode__T__I = (function(thiz) {
 $c_sjsr_RuntimeString$.prototype.contains__T__jl_CharSequence__Z = (function(thiz, s) {
   return ($m_sjsr_RuntimeString$().indexOf__T__T__I(thiz, $objectToString(s)) !== (-1))
 });
+$c_sjsr_RuntimeString$.prototype.indexOf__T__I__I = (function(thiz, ch) {
+  return $m_sjsr_RuntimeString$().indexOf__T__T__I(thiz, this.fromCodePoint__p1__I__T(ch))
+});
+$c_sjsr_RuntimeString$.prototype.indexOf__T__I__I__I = (function(thiz, ch, fromIndex) {
+  return $m_sjsr_RuntimeString$().indexOf__T__T__I__I(thiz, this.fromCodePoint__p1__I__T(ch), fromIndex)
+});
 $c_sjsr_RuntimeString$.prototype.indexOf__T__T__I = (function(thiz, str) {
   return $uI($m_sjs_js_JSStringOps$().enableJSStringOps__T__sjs_js_JSStringOps(thiz).indexOf(str))
+});
+$c_sjsr_RuntimeString$.prototype.indexOf__T__T__I__I = (function(thiz, str, fromIndex) {
+  return $uI($m_sjs_js_JSStringOps$().enableJSStringOps__T__sjs_js_JSStringOps(thiz).indexOf(str, fromIndex))
 });
 $c_sjsr_RuntimeString$.prototype.isEmpty__T__Z = (function(thiz) {
   return (this.scala$scalajs$runtime$RuntimeString$$checkNull__T__T(thiz) === "")
@@ -4021,6 +4354,16 @@ $c_sjsr_RuntimeString$.prototype.scala$scalajs$runtime$RuntimeString$$checkNull_
     throw new $c_jl_NullPointerException().init___()
   } else {
     return s
+  }
+});
+$c_sjsr_RuntimeString$.prototype.fromCodePoint__p1__I__T = (function(codePoint) {
+  if (((codePoint & (~65535)) === 0)) {
+    return $as_T($g.String.fromCharCode(codePoint))
+  } else if (((codePoint < 0) || (codePoint > 1114111))) {
+    throw new $c_jl_IllegalArgumentException().init___()
+  } else {
+    var offsetCp = ((codePoint - 65536) | 0);
+    return $as_T($g.String.fromCharCode(((offsetCp >> 10) | 55296), ((offsetCp & 1023) | 56320)))
   }
 });
 $c_sjsr_RuntimeString$.prototype.init___ = (function() {
@@ -4540,6 +4883,30 @@ function $h_sr_Statics$() {
   /*<skip>*/
 }
 $h_sr_Statics$.prototype = $c_sr_Statics$.prototype;
+$c_sr_Statics$.prototype.mix__I__I__I = (function(hash, data) {
+  var h = this.mixLast__I__I__I(hash, data);
+  h = $m_jl_Integer$().rotateLeft__I__I__I(h, 13);
+  return (($imul(h, 5) + (-430675100)) | 0)
+});
+$c_sr_Statics$.prototype.mixLast__I__I__I = (function(hash, data) {
+  var k = data;
+  k = $imul(k, (-862048943));
+  k = $m_jl_Integer$().rotateLeft__I__I__I(k, 15);
+  k = $imul(k, 461845907);
+  return (hash ^ k)
+});
+$c_sr_Statics$.prototype.finalizeHash__I__I__I = (function(hash, length) {
+  return this.avalanche__I__I((hash ^ length))
+});
+$c_sr_Statics$.prototype.avalanche__I__I = (function(h0) {
+  var h = h0;
+  h = (h ^ ((h >>> 16) | 0));
+  h = $imul(h, (-2048144789));
+  h = (h ^ ((h >>> 13) | 0));
+  h = $imul(h, (-1028477387));
+  h = (h ^ ((h >>> 16) | 0));
+  return h
+});
 $c_sr_Statics$.prototype.longHash__J__I = (function(lv) {
   var lo = lv.toInt__I();
   var hi = lv.$$greater$greater$greater__I__sjsr_RuntimeLong(32).toInt__I();
@@ -4586,6 +4953,325 @@ function $m_sr_Statics$() {
     $n_sr_Statics$ = new $c_sr_Statics$().init___()
   };
   return $n_sr_Statics$
+}
+function $f_Lscalatags_JsDom$Aggregate__genericAttr__Lscalatags_JsDom$GenericAttr($thiz) {
+  return new $c_Lscalatags_JsDom$GenericAttr().init___()
+}
+function $f_Lscalatags_JsDom$Aggregate__genericStyle__Lscalatags_JsDom$GenericStyle($thiz) {
+  return new $c_Lscalatags_JsDom$GenericStyle().init___()
+}
+function $f_Lscalatags_JsDom$Aggregate__genericPixelStyle__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz, ev) {
+  return new $c_Lscalatags_JsDom$GenericPixelStyle().init___Lscalatags_generic_StyleValue(ev)
+}
+function $f_Lscalatags_JsDom$Aggregate__genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue($thiz, ev) {
+  return new $c_Lscalatags_JsDom$GenericPixelStylePx().init___Lscalatags_generic_StyleValue(ev)
+}
+function $f_Lscalatags_JsDom$Aggregate__stringFrag__T__Lscalatags_JsDom$StringFrag($thiz, v) {
+  return new $c_Lscalatags_JsDom$StringFrag().init___T(v)
+}
+function $f_Lscalatags_JsDom$Aggregate__$$init$__V($thiz) {
+  $thiz.scalatags$JsDom$Aggregate$$undsetter$und$RawFrag$und$eq__Lscalatags_JsDom$RawFrag$__V($m_Lscalatags_JsDom$RawFrag$());
+  $thiz.scalatags$JsDom$Aggregate$$undsetter$und$StringFrag$und$eq__Lscalatags_JsDom$StringFrag$__V($m_Lscalatags_JsDom$StringFrag$());
+  $thiz.scalatags$JsDom$Aggregate$$undsetter$und$HtmlTag$und$eq__Lscalatags_JsDom$TypedTag$__V($m_Lscalatags_JsDom$TypedTag$());
+  $thiz.scalatags$JsDom$Aggregate$$undsetter$und$SvgTag$und$eq__Lscalatags_JsDom$TypedTag$__V($m_Lscalatags_JsDom$TypedTag$());
+  $thiz.scalatags$JsDom$Aggregate$$undsetter$und$Tag$und$eq__Lscalatags_JsDom$TypedTag$__V($m_Lscalatags_JsDom$TypedTag$())
+}
+/** @constructor */
+function $c_Lscalatags_JsDom$GenericAttr() {
+  $c_O.call(this)
+}
+$c_Lscalatags_JsDom$GenericAttr.prototype = new $h_O();
+$c_Lscalatags_JsDom$GenericAttr.prototype.constructor = $c_Lscalatags_JsDom$GenericAttr;
+/** @constructor */
+function $h_Lscalatags_JsDom$GenericAttr() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$GenericAttr.prototype = $c_Lscalatags_JsDom$GenericAttr.prototype;
+$c_Lscalatags_JsDom$GenericAttr.prototype.apply__Lorg_scalajs_dom_raw_Element__Lscalatags_generic_Attr__O__V = (function(t, a, v) {
+  var x1 = a.namespace__s_Option();
+  var x = $m_s_None$();
+  var x$2 = x1;
+  if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+    if ((!a.raw__Z())) {
+      t.setAttribute(a.name__T(), $objectToString(v))
+    } else {
+      var tmpElm = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("p");
+      tmpElm.innerHTML = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<p ", "=\"", "\"><p>"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([a.name__T(), $objectToString(v)]));
+      var newAttr = tmpElm.children[0].attributes[0].cloneNode(true);
+      t.setAttributeNode(newAttr)
+    }
+  } else if ($is_s_Some(x1)) {
+    var x2 = $as_s_Some(x1);
+    var namespace = $as_Lscalatags_generic_Namespace(x2.value__O());
+    t.setAttributeNS(namespace.uri__T(), a.name__T(), $objectToString(v))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lscalatags_JsDom$GenericAttr.prototype.apply__O__Lscalatags_generic_Attr__O__V = (function(t, a, v) {
+  this.apply__Lorg_scalajs_dom_raw_Element__Lscalatags_generic_Attr__O__V(t, a, v)
+});
+$c_Lscalatags_JsDom$GenericAttr.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_JsDom$GenericAttr = new $TypeData().initClass({
+  Lscalatags_JsDom$GenericAttr: 0
+}, false, "scalatags.JsDom$GenericAttr", {
+  Lscalatags_JsDom$GenericAttr: 1,
+  O: 1,
+  Lscalatags_generic_AttrValue: 1
+});
+$c_Lscalatags_JsDom$GenericAttr.prototype.$classData = $d_Lscalatags_JsDom$GenericAttr;
+/** @constructor */
+function $c_Lscalatags_JsDom$GenericPixelStyle() {
+  $c_O.call(this);
+  this.ev$1 = null
+}
+$c_Lscalatags_JsDom$GenericPixelStyle.prototype = new $h_O();
+$c_Lscalatags_JsDom$GenericPixelStyle.prototype.constructor = $c_Lscalatags_JsDom$GenericPixelStyle;
+/** @constructor */
+function $h_Lscalatags_JsDom$GenericPixelStyle() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$GenericPixelStyle.prototype = $c_Lscalatags_JsDom$GenericPixelStyle.prototype;
+$c_Lscalatags_JsDom$GenericPixelStyle.prototype.init___Lscalatags_generic_StyleValue = (function(ev) {
+  this.ev$1 = ev;
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_JsDom$GenericPixelStyle = new $TypeData().initClass({
+  Lscalatags_JsDom$GenericPixelStyle: 0
+}, false, "scalatags.JsDom$GenericPixelStyle", {
+  Lscalatags_JsDom$GenericPixelStyle: 1,
+  O: 1,
+  Lscalatags_generic_PixelStyleValue: 1
+});
+$c_Lscalatags_JsDom$GenericPixelStyle.prototype.$classData = $d_Lscalatags_JsDom$GenericPixelStyle;
+/** @constructor */
+function $c_Lscalatags_JsDom$GenericPixelStylePx() {
+  $c_O.call(this);
+  this.ev$1 = null
+}
+$c_Lscalatags_JsDom$GenericPixelStylePx.prototype = new $h_O();
+$c_Lscalatags_JsDom$GenericPixelStylePx.prototype.constructor = $c_Lscalatags_JsDom$GenericPixelStylePx;
+/** @constructor */
+function $h_Lscalatags_JsDom$GenericPixelStylePx() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$GenericPixelStylePx.prototype = $c_Lscalatags_JsDom$GenericPixelStylePx.prototype;
+$c_Lscalatags_JsDom$GenericPixelStylePx.prototype.init___Lscalatags_generic_StyleValue = (function(ev) {
+  this.ev$1 = ev;
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_JsDom$GenericPixelStylePx = new $TypeData().initClass({
+  Lscalatags_JsDom$GenericPixelStylePx: 0
+}, false, "scalatags.JsDom$GenericPixelStylePx", {
+  Lscalatags_JsDom$GenericPixelStylePx: 1,
+  O: 1,
+  Lscalatags_generic_PixelStyleValue: 1
+});
+$c_Lscalatags_JsDom$GenericPixelStylePx.prototype.$classData = $d_Lscalatags_JsDom$GenericPixelStylePx;
+/** @constructor */
+function $c_Lscalatags_JsDom$GenericStyle() {
+  $c_O.call(this)
+}
+$c_Lscalatags_JsDom$GenericStyle.prototype = new $h_O();
+$c_Lscalatags_JsDom$GenericStyle.prototype.constructor = $c_Lscalatags_JsDom$GenericStyle;
+/** @constructor */
+function $h_Lscalatags_JsDom$GenericStyle() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$GenericStyle.prototype = $c_Lscalatags_JsDom$GenericStyle.prototype;
+$c_Lscalatags_JsDom$GenericStyle.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_JsDom$GenericStyle = new $TypeData().initClass({
+  Lscalatags_JsDom$GenericStyle: 0
+}, false, "scalatags.JsDom$GenericStyle", {
+  Lscalatags_JsDom$GenericStyle: 1,
+  O: 1,
+  Lscalatags_generic_StyleValue: 1
+});
+$c_Lscalatags_JsDom$GenericStyle.prototype.$classData = $d_Lscalatags_JsDom$GenericStyle;
+/** @constructor */
+function $c_Lscalatags_LowPriorityImplicits$$anon$2() {
+  $c_O.call(this);
+  this.ev$1$1 = null
+}
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype = new $h_O();
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype.constructor = $c_Lscalatags_LowPriorityImplicits$$anon$2;
+/** @constructor */
+function $h_Lscalatags_LowPriorityImplicits$$anon$2() {
+  /*<skip>*/
+}
+$h_Lscalatags_LowPriorityImplicits$$anon$2.prototype = $c_Lscalatags_LowPriorityImplicits$$anon$2.prototype;
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype.apply__Lorg_scalajs_dom_raw_Element__Lscalatags_generic_Attr__O__V = (function(t, a, v) {
+  t[a.name__T()] = this.ev$1$1.apply__O__O(v)
+});
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype.apply__O__Lscalatags_generic_Attr__O__V = (function(t, a, v) {
+  this.apply__Lorg_scalajs_dom_raw_Element__Lscalatags_generic_Attr__O__V(t, a, v)
+});
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype.init___Lscalatags_LowPriorityImplicits__F1 = (function($$outer, ev$1) {
+  this.ev$1$1 = ev$1;
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_LowPriorityImplicits$$anon$2 = new $TypeData().initClass({
+  Lscalatags_LowPriorityImplicits$$anon$2: 0
+}, false, "scalatags.LowPriorityImplicits$$anon$2", {
+  Lscalatags_LowPriorityImplicits$$anon$2: 1,
+  O: 1,
+  Lscalatags_generic_AttrValue: 1
+});
+$c_Lscalatags_LowPriorityImplicits$$anon$2.prototype.$classData = $d_Lscalatags_LowPriorityImplicits$$anon$2;
+function $f_Lscalatags_generic_ClipboardEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_FormEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_GlobalAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_KeyboardEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_MouseEventAttrs__$$init$__V($thiz) {
+  $thiz.scalatags$generic$MouseEventAttrs$$undsetter$und$ondrag$und$eq__Lscalatags_generic_Attr__V($thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("ondrag", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z()))
+}
+/** @constructor */
+function $c_Lscalatags_generic_Namespace$$anon$1() {
+  $c_O.call(this)
+}
+$c_Lscalatags_generic_Namespace$$anon$1.prototype = new $h_O();
+$c_Lscalatags_generic_Namespace$$anon$1.prototype.constructor = $c_Lscalatags_generic_Namespace$$anon$1;
+/** @constructor */
+function $h_Lscalatags_generic_Namespace$$anon$1() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_Namespace$$anon$1.prototype = $c_Lscalatags_generic_Namespace$$anon$1.prototype;
+$c_Lscalatags_generic_Namespace$$anon$1.prototype.uri__T = (function() {
+  return "http://www.w3.org/2000/svg"
+});
+$c_Lscalatags_generic_Namespace$$anon$1.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_generic_Namespace$$anon$1 = new $TypeData().initClass({
+  Lscalatags_generic_Namespace$$anon$1: 0
+}, false, "scalatags.generic.Namespace$$anon$1", {
+  Lscalatags_generic_Namespace$$anon$1: 1,
+  O: 1,
+  Lscalatags_generic_Namespace: 1
+});
+$c_Lscalatags_generic_Namespace$$anon$1.prototype.$classData = $d_Lscalatags_generic_Namespace$$anon$1;
+/** @constructor */
+function $c_Lscalatags_generic_Namespace$$anon$2() {
+  $c_O.call(this)
+}
+$c_Lscalatags_generic_Namespace$$anon$2.prototype = new $h_O();
+$c_Lscalatags_generic_Namespace$$anon$2.prototype.constructor = $c_Lscalatags_generic_Namespace$$anon$2;
+/** @constructor */
+function $h_Lscalatags_generic_Namespace$$anon$2() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_Namespace$$anon$2.prototype = $c_Lscalatags_generic_Namespace$$anon$2.prototype;
+$c_Lscalatags_generic_Namespace$$anon$2.prototype.uri__T = (function() {
+  return "http://www.w3.org/1999/xhtml"
+});
+$c_Lscalatags_generic_Namespace$$anon$2.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_generic_Namespace$$anon$2 = new $TypeData().initClass({
+  Lscalatags_generic_Namespace$$anon$2: 0
+}, false, "scalatags.generic.Namespace$$anon$2", {
+  Lscalatags_generic_Namespace$$anon$2: 1,
+  O: 1,
+  Lscalatags_generic_Namespace: 1
+});
+$c_Lscalatags_generic_Namespace$$anon$2.prototype.$classData = $d_Lscalatags_generic_Namespace$$anon$2;
+/** @constructor */
+function $c_Lscalatags_generic_Namespace$$anon$3() {
+  $c_O.call(this)
+}
+$c_Lscalatags_generic_Namespace$$anon$3.prototype = new $h_O();
+$c_Lscalatags_generic_Namespace$$anon$3.prototype.constructor = $c_Lscalatags_generic_Namespace$$anon$3;
+/** @constructor */
+function $h_Lscalatags_generic_Namespace$$anon$3() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_Namespace$$anon$3.prototype = $c_Lscalatags_generic_Namespace$$anon$3.prototype;
+$c_Lscalatags_generic_Namespace$$anon$3.prototype.uri__T = (function() {
+  return "http://www.w3.org/1999/xlink"
+});
+$c_Lscalatags_generic_Namespace$$anon$3.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_generic_Namespace$$anon$3 = new $TypeData().initClass({
+  Lscalatags_generic_Namespace$$anon$3: 0
+}, false, "scalatags.generic.Namespace$$anon$3", {
+  Lscalatags_generic_Namespace$$anon$3: 1,
+  O: 1,
+  Lscalatags_generic_Namespace: 1
+});
+$c_Lscalatags_generic_Namespace$$anon$3.prototype.$classData = $d_Lscalatags_generic_Namespace$$anon$3;
+function $f_Lscalatags_generic_SharedEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_StyleMisc__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_TypedTag__build__O__V($thiz, b) {
+  var current = $thiz.modifiers__sci_List();
+  var arr = $newArrayObject($d_sc_Seq.getArrayOf(), [$thiz.modifiers__sci_List().length__I()]);
+  var i = 0;
+  while (true) {
+    var x = current;
+    var x$2 = $m_sci_Nil$();
+    if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
+      arr.set(i, $as_sc_Seq(current.head__O()));
+      current = $as_sci_List(current.tail__O());
+      i = ((i + 1) | 0)
+    } else {
+      break
+    }
+  };
+  var j = arr.u.length;
+  while ((j > 0)) {
+    j = ((j - 1) | 0);
+    var frag = arr.get(j);
+    var i$2 = 0;
+    while ((i$2 < frag.length__I())) {
+      $as_Lscalatags_generic_Modifier(frag.apply__I__O(i$2)).applyTo__O__V(b);
+      i$2 = ((i$2 + 1) | 0)
+    }
+  }
+}
+function $f_Lscalatags_generic_TypedTag__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_jsdom_Frag__applyTo__Lorg_scalajs_dom_raw_Element__V($thiz, b) {
+  b.appendChild($thiz.render__Lorg_scalajs_dom_raw_Node())
+}
+function $f_Lscalatags_jsdom_Frag__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_jsdom_TagFactory__typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag($thiz, s, $void, ns) {
+  if ((!$m_Lscalatags_Escaping$().validTag__T__Z(s))) {
+    throw new $c_jl_IllegalArgumentException().init___T(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["Illegal tag name: ", " is not a valid XML tag name"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([s])))
+  };
+  return $thiz.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag(s, $void, ns)
+}
+function $f_Lscalatags_jsdom_TagFactory__typedTag$default$2__Z($thiz) {
+  return false
+}
+function $f_Lscalatags_jsdom_TagFactory__$$init$__V($thiz) {
+  /*<skip>*/
 }
 /** @constructor */
 function $c_jl_Number() {
@@ -4718,6 +5404,19 @@ $c_ju_regex_Matcher.prototype.canStillFind__p1__Z = (function() {
 $c_ju_regex_Matcher.prototype.canStillFind$und$eq__p1__Z__V = (function(x$1) {
   this.canStillFind$1 = x$1
 });
+$c_ju_regex_Matcher.prototype.appendPos$und$eq__p1__I__V = (function(x$1) {
+  this.appendPos$1 = x$1
+});
+$c_ju_regex_Matcher.prototype.matches__Z = (function() {
+  this.reset__ju_regex_Matcher();
+  this.find__Z();
+  if (((this.lastMatch__p1__sjs_js_RegExp$ExecResult() !== null) && ((this.start__I() !== 0) || (this.end__I() !== $m_sjsr_RuntimeString$().length__T__I(this.inputstr__p1__T()))))) {
+    this.reset__ju_regex_Matcher()
+  } else {
+    (void 0)
+  };
+  return (this.lastMatch__p1__sjs_js_RegExp$ExecResult() !== null)
+});
 $c_ju_regex_Matcher.prototype.find__Z = (function() {
   if (this.canStillFind__p1__Z()) {
     this.lastMatchIsValid$und$eq__p1__Z__V(true);
@@ -4736,14 +5435,35 @@ $c_ju_regex_Matcher.prototype.find__Z = (function() {
     return false
   }
 });
+$c_ju_regex_Matcher.prototype.reset__ju_regex_Matcher = (function() {
+  this.regexp__p1__sjs_js_RegExp().lastIndex = 0;
+  this.lastMatch$und$eq__p1__sjs_js_RegExp$ExecResult__V(null);
+  this.lastMatchIsValid$und$eq__p1__Z__V(false);
+  this.canStillFind$und$eq__p1__Z__V(true);
+  this.appendPos$und$eq__p1__I__V(0);
+  this.startOfGroupCache$und$eq__p1__s_Option__V($m_s_None$());
+  return this
+});
 $c_ju_regex_Matcher.prototype.ensureLastMatch__p1__sjs_js_RegExp$ExecResult = (function() {
   if ((this.lastMatch__p1__sjs_js_RegExp$ExecResult() === null)) {
     throw new $c_jl_IllegalStateException().init___T("No match available")
   };
   return this.lastMatch__p1__sjs_js_RegExp$ExecResult()
 });
+$c_ju_regex_Matcher.prototype.groupCount__I = (function() {
+  return (($uI(this.ensureLastMatch__p1__sjs_js_RegExp$ExecResult().length) - 1) | 0)
+});
+$c_ju_regex_Matcher.prototype.start__I = (function() {
+  return $uI(this.ensureLastMatch__p1__sjs_js_RegExp$ExecResult().index)
+});
+$c_ju_regex_Matcher.prototype.end__I = (function() {
+  return ((this.start__I() + $m_sjsr_RuntimeString$().length__T__I(this.group__T())) | 0)
+});
 $c_ju_regex_Matcher.prototype.group__T = (function() {
   return $as_T($m_sjs_js_UndefOrOps$().get$extension__sjs_js_UndefOr__O($m_sjs_js_UndefOr$().undefOr2ops__sjs_js_UndefOr__sjs_js_UndefOr(this.ensureLastMatch__p1__sjs_js_RegExp$ExecResult()[0])))
+});
+$c_ju_regex_Matcher.prototype.group__I__T = (function(group) {
+  return $as_T($m_sjs_js_UndefOrOps$().orNull$extension__sjs_js_UndefOr__s_Predef$$less$colon$less__O($m_sjs_js_UndefOr$().undefOr2ops__sjs_js_UndefOr__sjs_js_UndefOr(this.ensureLastMatch__p1__sjs_js_RegExp$ExecResult()[group]), $m_s_Predef$().$$conforms__s_Predef$$less$colon$less()))
 });
 $c_ju_regex_Matcher.prototype.startOfGroupCache$und$eq__p1__s_Option__V = (function(x$1) {
   this.startOfGroupCache$1 = x$1
@@ -5388,6 +6108,62 @@ var $d_sr_ObjectRef = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_sr_ObjectRef.prototype.$classData = $d_sr_ObjectRef;
+function $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag($thiz, tag, $void, namespaceConfig) {
+  return new $c_Lscalatags_JsDom$TypedTag().init___T__sci_List__Z__Lscalatags_generic_Namespace(tag, $m_sci_Nil$(), $void, namespaceConfig)
+}
+function $f_Lscalatags_JsDom$Cap__$$init$__V($thiz) {
+  /*<skip>*/
+}
+/** @constructor */
+function $c_Lscalatags_JsDom$TypedTag$() {
+  $c_O.call(this)
+}
+$c_Lscalatags_JsDom$TypedTag$.prototype = new $h_O();
+$c_Lscalatags_JsDom$TypedTag$.prototype.constructor = $c_Lscalatags_JsDom$TypedTag$;
+/** @constructor */
+function $h_Lscalatags_JsDom$TypedTag$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$TypedTag$.prototype = $c_Lscalatags_JsDom$TypedTag$.prototype;
+$c_Lscalatags_JsDom$TypedTag$.prototype.toString__T = (function() {
+  return "TypedTag"
+});
+$c_Lscalatags_JsDom$TypedTag$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$TypedTag$ = this;
+  return this
+});
+var $d_Lscalatags_JsDom$TypedTag$ = new $TypeData().initClass({
+  Lscalatags_JsDom$TypedTag$: 0
+}, false, "scalatags.JsDom$TypedTag$", {
+  Lscalatags_JsDom$TypedTag$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$TypedTag$.prototype.$classData = $d_Lscalatags_JsDom$TypedTag$;
+var $n_Lscalatags_JsDom$TypedTag$ = (void 0);
+function $m_Lscalatags_JsDom$TypedTag$() {
+  if ((!$n_Lscalatags_JsDom$TypedTag$)) {
+    $n_Lscalatags_JsDom$TypedTag$ = new $c_Lscalatags_JsDom$TypedTag$().init___()
+  };
+  return $n_Lscalatags_JsDom$TypedTag$
+}
+function $f_Lscalatags_generic_InputAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_MediaEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_MiscellaneousEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_Styles__$$init$__V($thiz) {
+  /*<skip>*/
+}
+function $f_Lscalatags_generic_WindowEventAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $isArrayOf_jl_Boolean(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_Boolean)))
 }
@@ -6310,6 +7086,41 @@ function $m_s_Console$() {
   return $n_s_Console$
 }
 /** @constructor */
+function $c_s_Option$() {
+  $c_O.call(this)
+}
+$c_s_Option$.prototype = new $h_O();
+$c_s_Option$.prototype.constructor = $c_s_Option$;
+/** @constructor */
+function $h_s_Option$() {
+  /*<skip>*/
+}
+$h_s_Option$.prototype = $c_s_Option$.prototype;
+$c_s_Option$.prototype.apply__O__s_Option = (function(x) {
+  return ((x === null) ? $m_s_None$() : new $c_s_Some().init___O(x))
+});
+$c_s_Option$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_s_Option$ = this;
+  return this
+});
+var $d_s_Option$ = new $TypeData().initClass({
+  s_Option$: 0
+}, false, "scala.Option$", {
+  s_Option$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_Option$.prototype.$classData = $d_s_Option$;
+var $n_s_Option$ = (void 0);
+function $m_s_Option$() {
+  if ((!$n_s_Option$)) {
+    $n_s_Option$ = new $c_s_Option$().init___()
+  };
+  return $n_s_Option$
+}
+/** @constructor */
 function $c_s_Predef$() {
   $c_s_LowPriorityImplicits.call(this);
   this.Map$2 = null;
@@ -6333,6 +7144,11 @@ $c_s_Predef$.prototype.assert__Z__V = (function(assertion) {
     throw new $c_jl_AssertionError().init___O("assertion failed")
   }
 });
+$c_s_Predef$.prototype.require__Z__V = (function(requirement) {
+  if ((!requirement)) {
+    throw new $c_jl_IllegalArgumentException().init___T("requirement failed")
+  }
+});
 $c_s_Predef$.prototype.augmentString__T__T = (function(x) {
   return x
 });
@@ -6347,6 +7163,9 @@ $c_s_Predef$.prototype.boolean2Boolean__Z__jl_Boolean = (function(x) {
 });
 $c_s_Predef$.prototype.Boolean2boolean__jl_Boolean__Z = (function(x) {
   return $uZ(x)
+});
+$c_s_Predef$.prototype.$$conforms__s_Predef$$less$colon$less = (function() {
+  return this.singleton$und$less$colon$less$2
 });
 $c_s_Predef$.prototype.init___ = (function() {
   $c_s_LowPriorityImplicits.prototype.init___.call(this);
@@ -6379,6 +7198,146 @@ function $m_s_Predef$() {
     $n_s_Predef$ = new $c_s_Predef$().init___()
   };
   return $n_s_Predef$
+}
+/** @constructor */
+function $c_s_StringContext$() {
+  $c_O.call(this)
+}
+$c_s_StringContext$.prototype = new $h_O();
+$c_s_StringContext$.prototype.constructor = $c_s_StringContext$;
+/** @constructor */
+function $h_s_StringContext$() {
+  /*<skip>*/
+}
+$h_s_StringContext$.prototype = $c_s_StringContext$.prototype;
+$c_s_StringContext$.prototype.treatEscapes__T__T = (function(str) {
+  return this.treatEscapes0__p1__T__Z__T(str, false)
+});
+$c_s_StringContext$.prototype.treatEscapes0__p1__T__Z__T = (function(str, strict) {
+  var len = $m_sjsr_RuntimeString$().length__T__I(str);
+  var x1 = $m_sjsr_RuntimeString$().indexOf__T__I__I(str, 92);
+  switch (x1) {
+    case (-1): {
+      return str;
+      break
+    }
+    default: {
+      return this.replace$1__p1__I__T__Z__I__T(x1, str, strict, len)
+    }
+  }
+});
+$c_s_StringContext$.prototype.loop$1__p1__I__I__T__Z__I__jl_StringBuilder__T = (function(i, next, str$1, strict$1, len$1, b$1) {
+  var _$this = this;
+  _loop: while (true) {
+    if ((next >= 0)) {
+      if ((next > i)) {
+        b$1.append__jl_CharSequence__I__I__jl_StringBuilder(str$1, i, next)
+      } else {
+        (void 0)
+      };
+      var idx = ((next + 1) | 0);
+      if ((idx >= len$1)) {
+        throw new $c_s_StringContext$InvalidEscapeException().init___T__I(str$1, next)
+      };
+      var x1 = $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx);
+      switch (x1) {
+        case 98: {
+          var c = 8;
+          break
+        }
+        case 116: {
+          var c = 9;
+          break
+        }
+        case 110: {
+          var c = 10;
+          break
+        }
+        case 102: {
+          var c = 12;
+          break
+        }
+        case 114: {
+          var c = 13;
+          break
+        }
+        case 34: {
+          var c = 34;
+          break
+        }
+        case 39: {
+          var c = 39;
+          break
+        }
+        case 92: {
+          var c = 92;
+          break
+        }
+        default: {
+          if (((48 <= x1) && (x1 <= 55))) {
+            if (strict$1) {
+              throw new $c_s_StringContext$InvalidEscapeException().init___T__I(str$1, next)
+            };
+            var leadch = $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx);
+            var oct = ((leadch - 48) | 0);
+            idx = ((idx + 1) | 0);
+            if ((((idx < len$1) && (48 <= $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx))) && ($m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx) <= 55))) {
+              oct = (((($imul(oct, 8) + $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx)) | 0) - 48) | 0);
+              idx = ((idx + 1) | 0);
+              if (((((idx < len$1) && (leadch <= 51)) && (48 <= $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx))) && ($m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx) <= 55))) {
+                oct = (((($imul(oct, 8) + $m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str$1), idx)) | 0) - 48) | 0);
+                idx = ((idx + 1) | 0)
+              }
+            };
+            idx = ((idx - 1) | 0);
+            var c = (oct & 65535)
+          } else {
+            var c;
+            throw new $c_s_StringContext$InvalidEscapeException().init___T__I(str$1, next)
+          }
+        }
+      };
+      idx = ((idx + 1) | 0);
+      b$1.append__C__jl_StringBuilder(c);
+      var temp$i = idx;
+      var temp$next = $m_sjsr_RuntimeString$().indexOf__T__I__I__I(str$1, 92, idx);
+      i = temp$i;
+      next = temp$next;
+      continue _loop
+    } else {
+      if ((i < len$1)) {
+        b$1.append__jl_CharSequence__I__I__jl_StringBuilder(str$1, i, len$1)
+      } else {
+        (void 0)
+      };
+      return b$1.toString__T()
+    }
+  }
+});
+$c_s_StringContext$.prototype.replace$1__p1__I__T__Z__I__T = (function(first, str$1, strict$1, len$1) {
+  var b = new $c_jl_StringBuilder().init___();
+  return this.loop$1__p1__I__I__T__Z__I__jl_StringBuilder__T(0, first, str$1, strict$1, len$1, b)
+});
+$c_s_StringContext$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_s_StringContext$ = this;
+  return this
+});
+var $d_s_StringContext$ = new $TypeData().initClass({
+  s_StringContext$: 0
+}, false, "scala.StringContext$", {
+  s_StringContext$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_StringContext$.prototype.$classData = $d_s_StringContext$;
+var $n_s_StringContext$ = (void 0);
+function $m_s_StringContext$() {
+  if ((!$n_s_StringContext$)) {
+    $n_s_StringContext$ = new $c_s_StringContext$().init___()
+  };
+  return $n_s_StringContext$
 }
 /** @constructor */
 function $c_s_math_Fractional$() {
@@ -6684,6 +7643,18 @@ $h_s_util_matching_Regex.prototype = $c_s_util_matching_Regex.prototype;
 $c_s_util_matching_Regex.prototype.pattern__ju_regex_Pattern = (function() {
   return this.pattern$1
 });
+$c_s_util_matching_Regex.prototype.unapplySeq__jl_CharSequence__s_Option = (function(s) {
+  var x1 = s;
+  if ((null === x1)) {
+    return $m_s_None$()
+  } else {
+    var m = this.pattern__ju_regex_Pattern().matcher__jl_CharSequence__ju_regex_Matcher(s);
+    return (this.runMatcher__ju_regex_Matcher__Z(m) ? $m_s_util_matching_Regex$().scala$util$matching$Regex$$extractGroupsFromMatcher__ju_regex_Matcher__s_Option(m) : $m_s_None$())
+  }
+});
+$c_s_util_matching_Regex.prototype.runMatcher__ju_regex_Matcher__Z = (function(m) {
+  return m.matches__Z()
+});
 $c_s_util_matching_Regex.prototype.findAllIn__jl_CharSequence__s_util_matching_Regex$MatchIterator = (function(source) {
   return new $c_s_util_matching_Regex$MatchIterator().init___jl_CharSequence__s_util_matching_Regex__sc_Seq(source, this, this.scala$util$matching$Regex$$groupNames$f)
 });
@@ -6712,6 +7683,47 @@ var $d_s_util_matching_Regex = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_s_util_matching_Regex.prototype.$classData = $d_s_util_matching_Regex;
+/** @constructor */
+function $c_s_util_matching_Regex$() {
+  $c_O.call(this)
+}
+$c_s_util_matching_Regex$.prototype = new $h_O();
+$c_s_util_matching_Regex$.prototype.constructor = $c_s_util_matching_Regex$;
+/** @constructor */
+function $h_s_util_matching_Regex$() {
+  /*<skip>*/
+}
+$h_s_util_matching_Regex$.prototype = $c_s_util_matching_Regex$.prototype;
+$c_s_util_matching_Regex$.prototype.scala$util$matching$Regex$$extractGroupsFromMatcher__ju_regex_Matcher__s_Option = (function(m) {
+  var res = $m_sci_List$().empty__sci_List();
+  var index = m.groupCount__I();
+  while ((index > 0)) {
+    res = res.$$colon$colon__O__sci_List(m.group__I__T(index));
+    index = ((index - 1) | 0)
+  };
+  return new $c_s_Some().init___O(res)
+});
+$c_s_util_matching_Regex$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_s_util_matching_Regex$ = this;
+  return this
+});
+var $d_s_util_matching_Regex$ = new $TypeData().initClass({
+  s_util_matching_Regex$: 0
+}, false, "scala.util.matching.Regex$", {
+  s_util_matching_Regex$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_matching_Regex$.prototype.$classData = $d_s_util_matching_Regex$;
+var $n_s_util_matching_Regex$ = (void 0);
+function $m_s_util_matching_Regex$() {
+  if ((!$n_s_util_matching_Regex$)) {
+    $n_s_util_matching_Regex$ = new $c_s_util_matching_Regex$().init___()
+  };
+  return $n_s_util_matching_Regex$
+}
 function $f_sc_BufferedIterator__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -7509,6 +8521,18 @@ $c_Ljava_io_OutputStream.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   return this
 });
+function $f_Lscalatags_jsdom_Tags__p__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("p", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__div__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("div", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__img__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("img", true, $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $is_T(obj) {
   return ((typeof obj) === "string")
 }
@@ -7709,9 +8733,19 @@ function $h_jl_StringBuilder() {
   /*<skip>*/
 }
 $h_jl_StringBuilder.prototype = $c_jl_StringBuilder.prototype;
+$c_jl_StringBuilder.prototype.append__O__jl_StringBuilder = (function(obj) {
+  this.java$lang$StringBuilder$$content$f = (("" + this.java$lang$StringBuilder$$content$f) + obj);
+  return this
+});
 $c_jl_StringBuilder.prototype.append__T__jl_StringBuilder = (function(str) {
   this.java$lang$StringBuilder$$content$f = (("" + this.java$lang$StringBuilder$$content$f) + str);
   return this
+});
+$c_jl_StringBuilder.prototype.append__jl_CharSequence__jl_StringBuilder = (function(s) {
+  return this.append__O__jl_StringBuilder(s)
+});
+$c_jl_StringBuilder.prototype.append__jl_CharSequence__I__I__jl_StringBuilder = (function(s, start, end) {
+  return this.append__jl_CharSequence__jl_StringBuilder($charSequenceSubSequence(((s === null) ? "null" : s), start, end))
 });
 $c_jl_StringBuilder.prototype.append__C__jl_StringBuilder = (function(c) {
   return this.append__T__jl_StringBuilder($m_sr_BoxesRunTime$().boxToCharacter__C__jl_Character(c).toString__T())
@@ -7734,6 +8768,14 @@ $c_jl_StringBuilder.prototype.substring__I__I__T = (function(start, end) {
 $c_jl_StringBuilder.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   this.java$lang$StringBuilder$$content$f = "";
+  return this
+});
+$c_jl_StringBuilder.prototype.init___T = (function(str) {
+  $c_jl_StringBuilder.prototype.init___.call(this);
+  if ((str === null)) {
+    throw new $c_jl_NullPointerException().init___()
+  };
+  this.java$lang$StringBuilder$$content$f = str;
   return this
 });
 $c_jl_StringBuilder.prototype.init___I = (function(initialCapacity) {
@@ -8351,6 +9393,221 @@ $c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream = (functio
   return this
 });
 /** @constructor */
+function $c_Lscalatags_JsDom$RawFrag$() {
+  $c_O.call(this)
+}
+$c_Lscalatags_JsDom$RawFrag$.prototype = new $h_O();
+$c_Lscalatags_JsDom$RawFrag$.prototype.constructor = $c_Lscalatags_JsDom$RawFrag$;
+/** @constructor */
+function $h_Lscalatags_JsDom$RawFrag$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$RawFrag$.prototype = $c_Lscalatags_JsDom$RawFrag$.prototype;
+$c_Lscalatags_JsDom$RawFrag$.prototype.toString__T = (function() {
+  return $f_F1__toString__T(this)
+});
+$c_Lscalatags_JsDom$RawFrag$.prototype.apply__T__Lscalatags_JsDom$RawFrag = (function(v) {
+  return new $c_Lscalatags_JsDom$RawFrag().init___T(v)
+});
+$c_Lscalatags_JsDom$RawFrag$.prototype.apply__O__O = (function(v1) {
+  return this.apply__T__Lscalatags_JsDom$RawFrag($as_T(v1))
+});
+$c_Lscalatags_JsDom$RawFrag$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$RawFrag$ = this;
+  $f_F1__$$init$__V(this);
+  return this
+});
+var $d_Lscalatags_JsDom$RawFrag$ = new $TypeData().initClass({
+  Lscalatags_JsDom$RawFrag$: 0
+}, false, "scalatags.JsDom$RawFrag$", {
+  Lscalatags_JsDom$RawFrag$: 1,
+  O: 1,
+  Lscalatags_package$Companion: 1,
+  F1: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$RawFrag$.prototype.$classData = $d_Lscalatags_JsDom$RawFrag$;
+var $n_Lscalatags_JsDom$RawFrag$ = (void 0);
+function $m_Lscalatags_JsDom$RawFrag$() {
+  if ((!$n_Lscalatags_JsDom$RawFrag$)) {
+    $n_Lscalatags_JsDom$RawFrag$ = new $c_Lscalatags_JsDom$RawFrag$().init___()
+  };
+  return $n_Lscalatags_JsDom$RawFrag$
+}
+/** @constructor */
+function $c_Lscalatags_JsDom$StringFrag$() {
+  $c_O.call(this)
+}
+$c_Lscalatags_JsDom$StringFrag$.prototype = new $h_O();
+$c_Lscalatags_JsDom$StringFrag$.prototype.constructor = $c_Lscalatags_JsDom$StringFrag$;
+/** @constructor */
+function $h_Lscalatags_JsDom$StringFrag$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$StringFrag$.prototype = $c_Lscalatags_JsDom$StringFrag$.prototype;
+$c_Lscalatags_JsDom$StringFrag$.prototype.toString__T = (function() {
+  return $f_F1__toString__T(this)
+});
+$c_Lscalatags_JsDom$StringFrag$.prototype.apply__T__Lscalatags_JsDom$StringFrag = (function(v) {
+  return new $c_Lscalatags_JsDom$StringFrag().init___T(v)
+});
+$c_Lscalatags_JsDom$StringFrag$.prototype.apply__O__O = (function(v1) {
+  return this.apply__T__Lscalatags_JsDom$StringFrag($as_T(v1))
+});
+$c_Lscalatags_JsDom$StringFrag$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$StringFrag$ = this;
+  $f_F1__$$init$__V(this);
+  return this
+});
+var $d_Lscalatags_JsDom$StringFrag$ = new $TypeData().initClass({
+  Lscalatags_JsDom$StringFrag$: 0
+}, false, "scalatags.JsDom$StringFrag$", {
+  Lscalatags_JsDom$StringFrag$: 1,
+  O: 1,
+  Lscalatags_package$Companion: 1,
+  F1: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$StringFrag$.prototype.$classData = $d_Lscalatags_JsDom$StringFrag$;
+var $n_Lscalatags_JsDom$StringFrag$ = (void 0);
+function $m_Lscalatags_JsDom$StringFrag$() {
+  if ((!$n_Lscalatags_JsDom$StringFrag$)) {
+    $n_Lscalatags_JsDom$StringFrag$ = new $c_Lscalatags_JsDom$StringFrag$().init___()
+  };
+  return $n_Lscalatags_JsDom$StringFrag$
+}
+/** @constructor */
+function $c_Lscalatags_generic_Attr() {
+  $c_O.call(this);
+  this.name$1 = null;
+  this.namespace$1 = null;
+  this.raw$1 = false
+}
+$c_Lscalatags_generic_Attr.prototype = new $h_O();
+$c_Lscalatags_generic_Attr.prototype.constructor = $c_Lscalatags_generic_Attr;
+/** @constructor */
+function $h_Lscalatags_generic_Attr() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_Attr.prototype = $c_Lscalatags_generic_Attr.prototype;
+$c_Lscalatags_generic_Attr.prototype.name__T = (function() {
+  return this.name$1
+});
+$c_Lscalatags_generic_Attr.prototype.namespace__s_Option = (function() {
+  return this.namespace$1
+});
+$c_Lscalatags_generic_Attr.prototype.raw__Z = (function() {
+  return this.raw$1
+});
+$c_Lscalatags_generic_Attr.prototype.$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair = (function(v, ev) {
+  $m_ju_Objects$().requireNonNull__O__O(v);
+  return new $c_Lscalatags_generic_AttrPair().init___Lscalatags_generic_Attr__O__Lscalatags_generic_AttrValue(this, v, ev)
+});
+$c_Lscalatags_generic_Attr.prototype.productPrefix__T = (function() {
+  return "Attr"
+});
+$c_Lscalatags_generic_Attr.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lscalatags_generic_Attr.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.name__T();
+      break
+    }
+    case 1: {
+      return this.namespace__s_Option();
+      break
+    }
+    case 2: {
+      return this.raw__Z();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lscalatags_generic_Attr.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lscalatags_generic_Attr.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lscalatags_generic_Attr(x$1)
+});
+$c_Lscalatags_generic_Attr.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.name__T()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.namespace__s_Option()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, (this.raw__Z() ? 1231 : 1237));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
+});
+$c_Lscalatags_generic_Attr.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lscalatags_generic_Attr.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lscalatags_generic_Attr(x1) || false)) {
+      var Attr$1 = $as_Lscalatags_generic_Attr(x$1);
+      if ((this.name__T() === Attr$1.name__T())) {
+        var x = this.namespace__s_Option();
+        var x$2 = Attr$1.namespace__s_Option();
+        var jsx$1 = ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
+      } else {
+        var jsx$1 = false
+      };
+      if ((jsx$1 && (this.raw__Z() === Attr$1.raw__Z()))) {
+        return Attr$1.canEqual__O__Z(this)
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+});
+$c_Lscalatags_generic_Attr.prototype.init___T__s_Option__Z = (function(name, namespace, raw) {
+  this.name$1 = name;
+  this.namespace$1 = namespace;
+  this.raw$1 = raw;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  if (((!raw) && (!$m_Lscalatags_Escaping$().validAttrName__T__Z(name)))) {
+    throw new $c_jl_IllegalArgumentException().init___T(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["Illegal attribute name: ", " is not a valid XML attribute name"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([name])))
+  };
+  return this
+});
+function $is_Lscalatags_generic_Attr(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_generic_Attr)))
+}
+function $as_Lscalatags_generic_Attr(obj) {
+  return (($is_Lscalatags_generic_Attr(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.generic.Attr"))
+}
+function $isArrayOf_Lscalatags_generic_Attr(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_generic_Attr)))
+}
+function $asArrayOf_Lscalatags_generic_Attr(obj, depth) {
+  return (($isArrayOf_Lscalatags_generic_Attr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.generic.Attr;", depth))
+}
+var $d_Lscalatags_generic_Attr = new $TypeData().initClass({
+  Lscalatags_generic_Attr: 0
+}, false, "scalatags.generic.Attr", {
+  Lscalatags_generic_Attr: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_generic_Attr.prototype.$classData = $d_Lscalatags_generic_Attr;
+/** @constructor */
 function $c_jl_ArithmeticException() {
   $c_jl_RuntimeException.call(this)
 }
@@ -8745,6 +10002,9 @@ function $h_s_Option() {
   /*<skip>*/
 }
 $h_s_Option.prototype = $c_s_Option.prototype;
+$c_s_Option.prototype.isDefined__Z = (function() {
+  return (!this.isEmpty__Z())
+});
 $c_s_Option.prototype.getOrElse__F0__O = (function($default) {
   return (this.isEmpty__Z() ? $default.apply__O() : this.get__O())
 });
@@ -8826,6 +10086,126 @@ var $d_s_Predef$$anon$2 = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_s_Predef$$anon$2.prototype.$classData = $d_s_Predef$$anon$2;
+/** @constructor */
+function $c_s_StringContext() {
+  $c_O.call(this);
+  this.parts$1 = null
+}
+$c_s_StringContext.prototype = new $h_O();
+$c_s_StringContext.prototype.constructor = $c_s_StringContext;
+/** @constructor */
+function $h_s_StringContext() {
+  /*<skip>*/
+}
+$h_s_StringContext.prototype = $c_s_StringContext.prototype;
+$c_s_StringContext.prototype.parts__sc_Seq = (function() {
+  return this.parts$1
+});
+$c_s_StringContext.prototype.checkLengths__sc_Seq__V = (function(args) {
+  if ((this.parts__sc_Seq().length__I() !== ((args.length__I() + 1) | 0))) {
+    throw new $c_jl_IllegalArgumentException().init___T((((("wrong number of arguments (" + args.length__I()) + ") for interpolated string with ") + this.parts__sc_Seq().length__I()) + " parts"))
+  }
+});
+$c_s_StringContext.prototype.s__sc_Seq__T = (function(args) {
+  return this.standardInterpolator__F1__sc_Seq__T(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(str$2) {
+      var str = $as_T(str$2);
+      return $this.$$anonfun$s$1__p1__T__T(str)
+    })
+  })(this)), args)
+});
+$c_s_StringContext.prototype.standardInterpolator__F1__sc_Seq__T = (function(process, args) {
+  this.checkLengths__sc_Seq__V(args);
+  var pi = this.parts__sc_Seq().iterator__sc_Iterator();
+  var ai = args.iterator__sc_Iterator();
+  var bldr = new $c_jl_StringBuilder().init___T($as_T(process.apply__O__O(pi.next__O())));
+  while (ai.hasNext__Z()) {
+    bldr.append__O__jl_StringBuilder(ai.next__O());
+    bldr.append__T__jl_StringBuilder($as_T(process.apply__O__O(pi.next__O())))
+  };
+  return bldr.toString__T()
+});
+$c_s_StringContext.prototype.productPrefix__T = (function() {
+  return "StringContext"
+});
+$c_s_StringContext.prototype.productArity__I = (function() {
+  return 1
+});
+$c_s_StringContext.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.parts__sc_Seq();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_s_StringContext.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_s_StringContext.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_s_StringContext(x$1)
+});
+$c_s_StringContext.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$().$$undhashCode__s_Product__I(this)
+});
+$c_s_StringContext.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_s_StringContext.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_s_StringContext(x1) || false)) {
+      var StringContext$1 = $as_s_StringContext(x$1);
+      var x = this.parts__sc_Seq();
+      var x$2 = StringContext$1.parts__sc_Seq();
+      if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+        return StringContext$1.canEqual__O__Z(this)
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+});
+$c_s_StringContext.prototype.$$anonfun$s$1__p1__T__T = (function(str) {
+  return $m_s_StringContext$().treatEscapes__T__T(str)
+});
+$c_s_StringContext.prototype.init___sc_Seq = (function(parts) {
+  this.parts$1 = parts;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  return this
+});
+function $is_s_StringContext(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.s_StringContext)))
+}
+function $as_s_StringContext(obj) {
+  return (($is_s_StringContext(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.StringContext"))
+}
+function $isArrayOf_s_StringContext(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_StringContext)))
+}
+function $asArrayOf_s_StringContext(obj, depth) {
+  return (($isArrayOf_s_StringContext(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.StringContext;", depth))
+}
+var $d_s_StringContext = new $TypeData().initClass({
+  s_StringContext: 0
+}, false, "scala.StringContext", {
+  s_StringContext: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_StringContext.prototype.$classData = $d_s_StringContext;
 function $f_s_reflect_ClassTag__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -9674,6 +11054,223 @@ var $d_sr_ScalaRunTime$$anon$1 = new $TypeData().initClass({
 });
 $c_sr_ScalaRunTime$$anon$1.prototype.$classData = $d_sr_ScalaRunTime$$anon$1;
 /** @constructor */
+function $c_Lscalatags_JsDom$RawFrag() {
+  $c_O.call(this);
+  this.v$1 = null
+}
+$c_Lscalatags_JsDom$RawFrag.prototype = new $h_O();
+$c_Lscalatags_JsDom$RawFrag.prototype.constructor = $c_Lscalatags_JsDom$RawFrag;
+/** @constructor */
+function $h_Lscalatags_JsDom$RawFrag() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$RawFrag.prototype = $c_Lscalatags_JsDom$RawFrag.prototype;
+$c_Lscalatags_JsDom$RawFrag.prototype.v__T = (function() {
+  return this.v$1
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.applyTo__Lorg_scalajs_dom_raw_Element__V = (function(elem) {
+  elem.insertAdjacentHTML("beforeend", this.v__T())
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.productPrefix__T = (function() {
+  return "RawFrag"
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.v__T();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lscalatags_JsDom$RawFrag(x$1)
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$().$$undhashCode__s_Product__I(this)
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lscalatags_JsDom$RawFrag(x1) || false)) {
+      var RawFrag$1 = $as_Lscalatags_JsDom$RawFrag(x$1);
+      return ((this.v__T() === RawFrag$1.v__T()) && RawFrag$1.canEqual__O__Z(this))
+    } else {
+      return false
+    }
+  }
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.applyTo__O__V = (function(t) {
+  this.applyTo__Lorg_scalajs_dom_raw_Element__V(t)
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.init___T = (function(v) {
+  this.v$1 = v;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  $m_ju_Objects$().requireNonNull__O__O(v);
+  return this
+});
+function $is_Lscalatags_JsDom$RawFrag(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_JsDom$RawFrag)))
+}
+function $as_Lscalatags_JsDom$RawFrag(obj) {
+  return (($is_Lscalatags_JsDom$RawFrag(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.JsDom$RawFrag"))
+}
+function $isArrayOf_Lscalatags_JsDom$RawFrag(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_JsDom$RawFrag)))
+}
+function $asArrayOf_Lscalatags_JsDom$RawFrag(obj, depth) {
+  return (($isArrayOf_Lscalatags_JsDom$RawFrag(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.JsDom$RawFrag;", depth))
+}
+var $d_Lscalatags_JsDom$RawFrag = new $TypeData().initClass({
+  Lscalatags_JsDom$RawFrag: 0
+}, false, "scalatags.JsDom$RawFrag", {
+  Lscalatags_JsDom$RawFrag: 1,
+  O: 1,
+  Lscalatags_generic_Modifier: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$RawFrag.prototype.$classData = $d_Lscalatags_JsDom$RawFrag;
+/** @constructor */
+function $c_Lscalatags_generic_AttrPair() {
+  $c_O.call(this);
+  this.a$1 = null;
+  this.v$1 = null;
+  this.ev$1 = null
+}
+$c_Lscalatags_generic_AttrPair.prototype = new $h_O();
+$c_Lscalatags_generic_AttrPair.prototype.constructor = $c_Lscalatags_generic_AttrPair;
+/** @constructor */
+function $h_Lscalatags_generic_AttrPair() {
+  /*<skip>*/
+}
+$h_Lscalatags_generic_AttrPair.prototype = $c_Lscalatags_generic_AttrPair.prototype;
+$c_Lscalatags_generic_AttrPair.prototype.a__Lscalatags_generic_Attr = (function() {
+  return this.a$1
+});
+$c_Lscalatags_generic_AttrPair.prototype.v__O = (function() {
+  return this.v$1
+});
+$c_Lscalatags_generic_AttrPair.prototype.ev__Lscalatags_generic_AttrValue = (function() {
+  return this.ev$1
+});
+$c_Lscalatags_generic_AttrPair.prototype.applyTo__O__V = (function(t) {
+  this.ev__Lscalatags_generic_AttrValue().apply__O__Lscalatags_generic_Attr__O__V(t, this.a__Lscalatags_generic_Attr(), this.v__O())
+});
+$c_Lscalatags_generic_AttrPair.prototype.productPrefix__T = (function() {
+  return "AttrPair"
+});
+$c_Lscalatags_generic_AttrPair.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lscalatags_generic_AttrPair.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.a__Lscalatags_generic_Attr();
+      break
+    }
+    case 1: {
+      return this.v__O();
+      break
+    }
+    case 2: {
+      return this.ev__Lscalatags_generic_AttrValue();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lscalatags_generic_AttrPair.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lscalatags_generic_AttrPair.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lscalatags_generic_AttrPair(x$1)
+});
+$c_Lscalatags_generic_AttrPair.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$().$$undhashCode__s_Product__I(this)
+});
+$c_Lscalatags_generic_AttrPair.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lscalatags_generic_AttrPair.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lscalatags_generic_AttrPair(x1) || false)) {
+      var AttrPair$1 = $as_Lscalatags_generic_AttrPair(x$1);
+      var x = this.a__Lscalatags_generic_Attr();
+      var x$2 = AttrPair$1.a__Lscalatags_generic_Attr();
+      if ((((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)) && $m_sr_BoxesRunTime$().equals__O__O__Z(this.v__O(), AttrPair$1.v__O()))) {
+        var x$3 = this.ev__Lscalatags_generic_AttrValue();
+        var x$4 = AttrPair$1.ev__Lscalatags_generic_AttrValue();
+        var jsx$1 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      } else {
+        var jsx$1 = false
+      };
+      if (jsx$1) {
+        return AttrPair$1.canEqual__O__Z(this)
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+});
+$c_Lscalatags_generic_AttrPair.prototype.init___Lscalatags_generic_Attr__O__Lscalatags_generic_AttrValue = (function(a, v, ev) {
+  this.a$1 = a;
+  this.v$1 = v;
+  this.ev$1 = ev;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  return this
+});
+function $is_Lscalatags_generic_AttrPair(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_generic_AttrPair)))
+}
+function $as_Lscalatags_generic_AttrPair(obj) {
+  return (($is_Lscalatags_generic_AttrPair(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.generic.AttrPair"))
+}
+function $isArrayOf_Lscalatags_generic_AttrPair(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_generic_AttrPair)))
+}
+function $asArrayOf_Lscalatags_generic_AttrPair(obj, depth) {
+  return (($isArrayOf_Lscalatags_generic_AttrPair(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.generic.AttrPair;", depth))
+}
+var $d_Lscalatags_generic_AttrPair = new $TypeData().initClass({
+  Lscalatags_generic_AttrPair: 0
+}, false, "scalatags.generic.AttrPair", {
+  Lscalatags_generic_AttrPair: 1,
+  O: 1,
+  Lscalatags_generic_Modifier: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_generic_AttrPair.prototype.$classData = $d_Lscalatags_generic_AttrPair;
+/** @constructor */
 function $c_T2() {
   $c_O.call(this);
   this.$$und1$f = null;
@@ -10059,6 +11656,37 @@ var $d_s_Some = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_s_Some.prototype.$classData = $d_s_Some;
+/** @constructor */
+function $c_s_StringContext$InvalidEscapeException() {
+  $c_jl_IllegalArgumentException.call(this);
+  this.index$5 = 0
+}
+$c_s_StringContext$InvalidEscapeException.prototype = new $h_jl_IllegalArgumentException();
+$c_s_StringContext$InvalidEscapeException.prototype.constructor = $c_s_StringContext$InvalidEscapeException;
+/** @constructor */
+function $h_s_StringContext$InvalidEscapeException() {
+  /*<skip>*/
+}
+$h_s_StringContext$InvalidEscapeException.prototype = $c_s_StringContext$InvalidEscapeException.prototype;
+$c_s_StringContext$InvalidEscapeException.prototype.init___T__I = (function(str, index) {
+  this.index$5 = index;
+  $m_s_Predef$().require__Z__V(((index >= 0) && (index < $m_sjsr_RuntimeString$().length__T__I(str))));
+  var ok = "[\\b, \\t, \\n, \\f, \\r, \\\\, \\\", \\']";
+  $c_jl_IllegalArgumentException.prototype.init___T.call(this, (((((("invalid escape " + ((index === (($m_sjsr_RuntimeString$().length__T__I(str) - 1) | 0)) ? "at terminal" : (((("'\\" + $m_sr_BoxesRunTime$().boxToCharacter__C__jl_Character($m_sci_StringOps$().apply$extension__T__I__C($m_s_Predef$().augmentString__T__T(str), ((index + 1) | 0)))) + "' not one of ") + ok) + " at"))) + " index ") + index) + " in \"") + str) + "\". Use \\\\ for literal \\."));
+  return this
+});
+var $d_s_StringContext$InvalidEscapeException = new $TypeData().initClass({
+  s_StringContext$InvalidEscapeException: 0
+}, false, "scala.StringContext$InvalidEscapeException", {
+  s_StringContext$InvalidEscapeException: 1,
+  jl_IllegalArgumentException: 1,
+  jl_RuntimeException: 1,
+  jl_Exception: 1,
+  jl_Throwable: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_StringContext$InvalidEscapeException.prototype.$classData = $d_s_StringContext$InvalidEscapeException;
 function $f_s_reflect_Manifest__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -11007,6 +12635,110 @@ function $m_sjs_js_WrappedArray$() {
   return $n_sjs_js_WrappedArray$
 }
 /** @constructor */
+function $c_Lscalatags_JsDom$StringFrag() {
+  $c_O.call(this);
+  this.v$1 = null
+}
+$c_Lscalatags_JsDom$StringFrag.prototype = new $h_O();
+$c_Lscalatags_JsDom$StringFrag.prototype.constructor = $c_Lscalatags_JsDom$StringFrag;
+/** @constructor */
+function $h_Lscalatags_JsDom$StringFrag() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$StringFrag.prototype = $c_Lscalatags_JsDom$StringFrag.prototype;
+$c_Lscalatags_JsDom$StringFrag.prototype.applyTo__Lorg_scalajs_dom_raw_Element__V = (function(b) {
+  $f_Lscalatags_jsdom_Frag__applyTo__Lorg_scalajs_dom_raw_Element__V(this, b)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.v__T = (function() {
+  return this.v$1
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.render__Lorg_scalajs_dom_raw_Text = (function() {
+  return $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createTextNode(this.v__T())
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.productPrefix__T = (function() {
+  return "StringFrag"
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.v__T();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lscalatags_JsDom$StringFrag(x$1)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$().$$undhashCode__s_Product__I(this)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lscalatags_JsDom$StringFrag(x1) || false)) {
+      var StringFrag$1 = $as_Lscalatags_JsDom$StringFrag(x$1);
+      return ((this.v__T() === StringFrag$1.v__T()) && StringFrag$1.canEqual__O__Z(this))
+    } else {
+      return false
+    }
+  }
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.applyTo__O__V = (function(t) {
+  this.applyTo__Lorg_scalajs_dom_raw_Element__V(t)
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.render__Lorg_scalajs_dom_raw_Node = (function() {
+  return this.render__Lorg_scalajs_dom_raw_Text()
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.init___T = (function(v) {
+  this.v$1 = v;
+  $c_O.prototype.init___.call(this);
+  $f_Lscalatags_jsdom_Frag__$$init$__V(this);
+  $f_s_Product__$$init$__V(this);
+  $m_ju_Objects$().requireNonNull__O__O(v);
+  return this
+});
+function $is_Lscalatags_JsDom$StringFrag(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_JsDom$StringFrag)))
+}
+function $as_Lscalatags_JsDom$StringFrag(obj) {
+  return (($is_Lscalatags_JsDom$StringFrag(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.JsDom$StringFrag"))
+}
+function $isArrayOf_Lscalatags_JsDom$StringFrag(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_JsDom$StringFrag)))
+}
+function $asArrayOf_Lscalatags_JsDom$StringFrag(obj, depth) {
+  return (($isArrayOf_Lscalatags_JsDom$StringFrag(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.JsDom$StringFrag;", depth))
+}
+var $d_Lscalatags_JsDom$StringFrag = new $TypeData().initClass({
+  Lscalatags_JsDom$StringFrag: 0
+}, false, "scalatags.JsDom$StringFrag", {
+  Lscalatags_JsDom$StringFrag: 1,
+  O: 1,
+  Lscalatags_jsdom_Frag: 1,
+  Lscalatags_generic_Frag: 1,
+  Lscalatags_generic_Modifier: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$StringFrag.prototype.$classData = $d_Lscalatags_JsDom$StringFrag;
+/** @constructor */
 function $c_jl_JSConsoleBasedPrintStream() {
   $c_Ljava_io_PrintStream.call(this);
   this.isErr$4 = null;
@@ -11483,6 +13215,180 @@ var $d_sjs_js_JavaScriptException = new $TypeData().initClass({
   s_Serializable: 1
 });
 $c_sjs_js_JavaScriptException.prototype.$classData = $d_sjs_js_JavaScriptException;
+/** @constructor */
+function $c_Lscalatags_JsDom$TypedTag() {
+  $c_O.call(this);
+  this.tag$1 = null;
+  this.modifiers$1 = null;
+  this.void$1 = false;
+  this.namespace$1 = null
+}
+$c_Lscalatags_JsDom$TypedTag.prototype = new $h_O();
+$c_Lscalatags_JsDom$TypedTag.prototype.constructor = $c_Lscalatags_JsDom$TypedTag;
+/** @constructor */
+function $h_Lscalatags_JsDom$TypedTag() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$TypedTag.prototype = $c_Lscalatags_JsDom$TypedTag.prototype;
+$c_Lscalatags_JsDom$TypedTag.prototype.applyTo__Lorg_scalajs_dom_raw_Element__V = (function(b) {
+  $f_Lscalatags_jsdom_Frag__applyTo__Lorg_scalajs_dom_raw_Element__V(this, b)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.build__O__V = (function(b) {
+  $f_Lscalatags_generic_TypedTag__build__O__V(this, b)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.tag__T = (function() {
+  return this.tag$1
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.modifiers__sci_List = (function() {
+  return this.modifiers$1
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.$void__Z = (function() {
+  return this.void$1
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.namespace__Lscalatags_generic_Namespace = (function() {
+  return this.namespace$1
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.render__Lorg_scalajs_dom_raw_Element = (function() {
+  var elem = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElementNS(this.namespace__Lscalatags_generic_Namespace().uri__T(), this.tag__T());
+  this.build__O__V(elem);
+  return elem
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.apply__sc_Seq__Lscalatags_JsDom$TypedTag = (function(xs) {
+  var x$12 = this.tag__T();
+  var x$13 = this.$void__Z();
+  var x$5 = xs;
+  var x$14 = this.modifiers__sci_List().$$colon$colon__O__sci_List(x$5);
+  var x$15 = this.copy$default$4__Lscalatags_generic_Namespace();
+  return this.copy__T__sci_List__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(x$12, x$14, x$13, x$15)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.toString__T = (function() {
+  return $as_T(this.render__Lorg_scalajs_dom_raw_Element().outerHTML)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.copy__T__sci_List__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag = (function(tag, modifiers, $void, namespace) {
+  return new $c_Lscalatags_JsDom$TypedTag().init___T__sci_List__Z__Lscalatags_generic_Namespace(tag, modifiers, $void, namespace)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.copy$default$4__Lscalatags_generic_Namespace = (function() {
+  return this.namespace__Lscalatags_generic_Namespace()
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.productPrefix__T = (function() {
+  return "TypedTag"
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.productArity__I = (function() {
+  return 4
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.tag__T();
+      break
+    }
+    case 1: {
+      return this.modifiers__sci_List();
+      break
+    }
+    case 2: {
+      return this.$void__Z();
+      break
+    }
+    case 3: {
+      return this.namespace__Lscalatags_generic_Namespace();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lscalatags_JsDom$TypedTag(x$1)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.tag__T()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.modifiers__sci_List()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, (this.$void__Z() ? 1231 : 1237));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.namespace__Lscalatags_generic_Namespace()));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 4)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lscalatags_JsDom$TypedTag(x1) || false)) {
+      var TypedTag$1 = $as_Lscalatags_JsDom$TypedTag(x$1);
+      if ((this.tag__T() === TypedTag$1.tag__T())) {
+        var x = this.modifiers__sci_List();
+        var x$2 = TypedTag$1.modifiers__sci_List();
+        var jsx$2 = ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
+      } else {
+        var jsx$2 = false
+      };
+      if ((jsx$2 && (this.$void__Z() === TypedTag$1.$void__Z()))) {
+        var x$3 = this.namespace__Lscalatags_generic_Namespace();
+        var x$4 = TypedTag$1.namespace__Lscalatags_generic_Namespace();
+        var jsx$1 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      } else {
+        var jsx$1 = false
+      };
+      if (jsx$1) {
+        return TypedTag$1.canEqual__O__Z(this)
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.applyTo__O__V = (function(t) {
+  this.applyTo__Lorg_scalajs_dom_raw_Element__V(t)
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.render__Lorg_scalajs_dom_raw_Node = (function() {
+  return this.render__Lorg_scalajs_dom_raw_Element()
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.init___T__sci_List__Z__Lscalatags_generic_Namespace = (function(tag, modifiers, $void, namespace) {
+  this.tag$1 = tag;
+  this.modifiers$1 = modifiers;
+  this.void$1 = $void;
+  this.namespace$1 = namespace;
+  $c_O.prototype.init___.call(this);
+  $f_Lscalatags_generic_TypedTag__$$init$__V(this);
+  $f_Lscalatags_jsdom_Frag__$$init$__V(this);
+  $f_s_Product__$$init$__V(this);
+  return this
+});
+function $is_Lscalatags_JsDom$TypedTag(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lscalatags_JsDom$TypedTag)))
+}
+function $as_Lscalatags_JsDom$TypedTag(obj) {
+  return (($is_Lscalatags_JsDom$TypedTag(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scalatags.JsDom$TypedTag"))
+}
+function $isArrayOf_Lscalatags_JsDom$TypedTag(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lscalatags_JsDom$TypedTag)))
+}
+function $asArrayOf_Lscalatags_JsDom$TypedTag(obj, depth) {
+  return (($isArrayOf_Lscalatags_JsDom$TypedTag(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscalatags.JsDom$TypedTag;", depth))
+}
+var $d_Lscalatags_JsDom$TypedTag = new $TypeData().initClass({
+  Lscalatags_JsDom$TypedTag: 0
+}, false, "scalatags.JsDom$TypedTag", {
+  Lscalatags_JsDom$TypedTag: 1,
+  O: 1,
+  Lscalatags_generic_TypedTag: 1,
+  Lscalatags_generic_Frag: 1,
+  Lscalatags_generic_Modifier: 1,
+  Lscalatags_jsdom_Frag: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lscalatags_JsDom$TypedTag.prototype.$classData = $d_Lscalatags_JsDom$TypedTag;
 /** @constructor */
 function $c_s_reflect_ManifestFactory$BooleanManifest$() {
   $c_s_reflect_AnyValManifest.call(this)
@@ -12544,6 +14450,12 @@ function $f_sci_Traversable__$$init$__V($thiz) {
 function $f_scm_Traversable__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_generic_Attrs__src__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("src", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_Attrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $f_sc_GenSet__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -12801,6 +14713,12 @@ function $f_scg_IterableForwarder__$$init$__V($thiz) {
 function $f_sci_StringLike__apply__I__C($thiz, n) {
   return $m_sjsr_RuntimeString$().charAt__T__I__C($thiz.toString__T(), n)
 }
+function $f_sci_StringLike__r__s_util_matching_Regex($thiz) {
+  return $thiz.r__sc_Seq__s_util_matching_Regex($m_sci_Nil$())
+}
+function $f_sci_StringLike__r__sc_Seq__s_util_matching_Regex($thiz, groupNames) {
+  return new $c_s_util_matching_Regex().init___T__sc_Seq($thiz.toString__T(), groupNames)
+}
 function $f_sci_StringLike__toInt__I($thiz) {
   return $m_jl_Integer$().parseInt__T__I($thiz.toString__T())
 }
@@ -12916,6 +14834,12 @@ function $h_sci_StringOps() {
   /*<skip>*/
 }
 $h_sci_StringOps.prototype = $c_sci_StringOps.prototype;
+$c_sci_StringOps.prototype.r__s_util_matching_Regex = (function() {
+  return $f_sci_StringLike__r__s_util_matching_Regex(this)
+});
+$c_sci_StringOps.prototype.r__sc_Seq__s_util_matching_Regex = (function(groupNames) {
+  return $f_sci_StringLike__r__sc_Seq__s_util_matching_Regex(this, groupNames)
+});
 $c_sci_StringOps.prototype.toInt__I = (function() {
   return $f_sci_StringLike__toInt__I(this)
 });
@@ -13082,6 +15006,31 @@ function $isArrayOf_sc_Seq(obj, depth) {
 function $asArrayOf_sc_Seq(obj, depth) {
   return (($isArrayOf_sc_Seq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.Seq;", depth))
 }
+var $d_sc_Seq = new $TypeData().initClass({
+  sc_Seq: 0
+}, true, "scala.collection.Seq", {
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_Iterable: 1,
+  sc_Traversable: 1,
+  sc_TraversableLike: 1,
+  scg_HasNewBuilder: 1,
+  scg_FilterMonadic: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1,
+  sc_GenTraversableLike: 1,
+  sc_Parallelizable: 1,
+  sc_GenTraversable: 1,
+  scg_GenericTraversableTemplate: 1,
+  sc_GenIterable: 1,
+  sc_GenIterableLike: 1,
+  sc_IterableLike: 1,
+  s_Equals: 1,
+  sc_GenSeq: 1,
+  sc_GenSeqLike: 1,
+  sc_SeqLike: 1
+});
 function $f_sc_Set__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -13377,6 +15326,649 @@ $c_sc_AbstractSeq.prototype.init___ = (function() {
 });
 function $f_sci_Seq__$$init$__V($thiz) {
   /*<skip>*/
+}
+/** @constructor */
+function $c_Lscalatags_JsDom$all$() {
+  $c_O.call(this);
+  this.bindJsAny$module$1 = null;
+  this.RawFrag$1 = null;
+  this.StringFrag$1 = null;
+  this.HtmlTag$1 = null;
+  this.SvgTag$1 = null;
+  this.Tag$1 = null;
+  this.stringAttr$1 = null;
+  this.booleanAttr$1 = null;
+  this.byteAttr$1 = null;
+  this.shortAttr$1 = null;
+  this.intAttr$1 = null;
+  this.longAttr$1 = null;
+  this.floatAttr$1 = null;
+  this.doubleAttr$1 = null;
+  this.stringStyle$1 = null;
+  this.booleanStyle$1 = null;
+  this.byteStyle$1 = null;
+  this.shortStyle$1 = null;
+  this.intStyle$1 = null;
+  this.longStyle$1 = null;
+  this.floatStyle$1 = null;
+  this.doubleStyle$1 = null;
+  this.stringPixelStyle$1 = null;
+  this.booleanPixelStyle$1 = null;
+  this.bytePixelStyle$1 = null;
+  this.shortPixelStyle$1 = null;
+  this.intPixelStyle$1 = null;
+  this.longPixelStyle$1 = null;
+  this.floatPixelStyle$1 = null;
+  this.doublePixelStyle$1 = null;
+  this.html$1 = null;
+  this.head$1 = null;
+  this.base$1 = null;
+  this.link$1 = null;
+  this.meta$1 = null;
+  this.script$1 = null;
+  this.body$1 = null;
+  this.h1$1 = null;
+  this.h2$1 = null;
+  this.h3$1 = null;
+  this.h4$1 = null;
+  this.h5$1 = null;
+  this.h6$1 = null;
+  this.header$1 = null;
+  this.footer$1 = null;
+  this.p$1 = null;
+  this.hr$1 = null;
+  this.pre$1 = null;
+  this.blockquote$1 = null;
+  this.ol$1 = null;
+  this.ul$1 = null;
+  this.li$1 = null;
+  this.dl$1 = null;
+  this.dt$1 = null;
+  this.dd$1 = null;
+  this.figure$1 = null;
+  this.figcaption$1 = null;
+  this.div$1 = null;
+  this.a$1 = null;
+  this.em$1 = null;
+  this.strong$1 = null;
+  this.small$1 = null;
+  this.s$1 = null;
+  this.cite$1 = null;
+  this.code$1 = null;
+  this.sub$1 = null;
+  this.sup$1 = null;
+  this.i$1 = null;
+  this.b$1 = null;
+  this.u$1 = null;
+  this.span$1 = null;
+  this.br$1 = null;
+  this.wbr$1 = null;
+  this.ins$1 = null;
+  this.del$1 = null;
+  this.img$1 = null;
+  this.iframe$1 = null;
+  this.embed$1 = null;
+  this.object$1 = null;
+  this.param$1 = null;
+  this.video$1 = null;
+  this.audio$1 = null;
+  this.source$1 = null;
+  this.track$1 = null;
+  this.canvas$1 = null;
+  this.map$1 = null;
+  this.area$1 = null;
+  this.table$1 = null;
+  this.caption$1 = null;
+  this.colgroup$1 = null;
+  this.col$1 = null;
+  this.tbody$1 = null;
+  this.thead$1 = null;
+  this.tfoot$1 = null;
+  this.tr$1 = null;
+  this.td$1 = null;
+  this.th$1 = null;
+  this.form$1 = null;
+  this.fieldset$1 = null;
+  this.legend$1 = null;
+  this.label$1 = null;
+  this.input$1 = null;
+  this.button$1 = null;
+  this.select$1 = null;
+  this.datalist$1 = null;
+  this.optgroup$1 = null;
+  this.option$1 = null;
+  this.textarea$1 = null;
+  this.backgroundAttachment$module$1 = null;
+  this.background$1 = null;
+  this.backgroundRepeat$1 = null;
+  this.backgroundPosition$1 = null;
+  this.backgroundColor$1 = null;
+  this.backgroundOrigin$module$1 = null;
+  this.backgroundClip$module$1 = null;
+  this.backgroundSize$module$1 = null;
+  this.backgroundImage$1 = null;
+  this.borderTopColor$1 = null;
+  this.borderStyle$1 = null;
+  this.borderTopStyle$1 = null;
+  this.borderRightStyle$1 = null;
+  this.borderRightWidth$1 = null;
+  this.borderTopRightRadius$1 = null;
+  this.borderBottomLeftRadius$1 = null;
+  this.borderRightColor$1 = null;
+  this.borderBottom$1 = null;
+  this.border$1 = null;
+  this.borderBottomWidth$1 = null;
+  this.borderLeftColor$1 = null;
+  this.borderBottomColor$1 = null;
+  this.borderCollapse$module$1 = null;
+  this.borderLeft$1 = null;
+  this.borderLeftStyle$1 = null;
+  this.borderRight$1 = null;
+  this.borderBottomStyle$1 = null;
+  this.borderLeftWidth$1 = null;
+  this.borderTopWidth$1 = null;
+  this.borderTop$1 = null;
+  this.borderSpacing$module$1 = null;
+  this.borderRadius$1 = null;
+  this.borderWidth$1 = null;
+  this.borderBottomRightRadius$1 = null;
+  this.borderTopLeftRadius$1 = null;
+  this.borderColor$1 = null;
+  this.boxSizing$module$1 = null;
+  this.color$module$1 = null;
+  this.clip$module$1 = null;
+  this.cursor$module$1 = null;
+  this.float$module$1 = null;
+  this.direction$module$1 = null;
+  this.display$module$1 = null;
+  this.pointerEvents$module$1 = null;
+  this.listStyleImage$module$1 = null;
+  this.listStylePosition$module$1 = null;
+  this.wordWrap$module$1 = null;
+  this.opacity$1 = null;
+  this.maxWidth$1 = null;
+  this.verticalAlign$module$1 = null;
+  this.overflow$module$1 = null;
+  this.mask$module$1 = null;
+  this.emptyCells$module$1 = null;
+  this.height$1 = null;
+  this.paddingRight$1 = null;
+  this.paddingTop$1 = null;
+  this.paddingLeft$1 = null;
+  this.padding$1 = null;
+  this.paddingBottom$1 = null;
+  this.right$1 = null;
+  this.lineHeight$1 = null;
+  this.left$1 = null;
+  this.listStyleType$module$1 = null;
+  this.listStyle$1 = null;
+  this.overflowY$1 = null;
+  this.captionSide$module$1 = null;
+  this.boxShadow$1 = null;
+  this.position$module$1 = null;
+  this.quotes$module$1 = null;
+  this.tableLayout$module$1 = null;
+  this.fontSize$module$1 = null;
+  this.fontSizeAdjust$1 = null;
+  this.fontFamily$1 = null;
+  this.fontWeight$module$1 = null;
+  this.font$1 = null;
+  this.fontFeatureSettings$1 = null;
+  this.fontStyle$module$1 = null;
+  this.clear$module$1 = null;
+  this.marginBottom$1 = null;
+  this.marginRight$1 = null;
+  this.marginTop$1 = null;
+  this.marginLeft$1 = null;
+  this.margin$module$1 = null;
+  this.top$1 = null;
+  this.width$1 = null;
+  this.bottom$1 = null;
+  this.letterSpacing$1 = null;
+  this.maxHeight$1 = null;
+  this.minWidth$1 = null;
+  this.minHeight$1 = null;
+  this.outline$1 = null;
+  this.outlineStyle$1 = null;
+  this.outlineWidth$module$1 = null;
+  this.outlineColor$module$1 = null;
+  this.overflowX$1 = null;
+  this.textAlignLast$1 = null;
+  this.textAlign$1 = null;
+  this.textDecoration$module$1 = null;
+  this.textIndent$1 = null;
+  this.textOverflow$module$1 = null;
+  this.textUnderlinePosition$module$1 = null;
+  this.textTransform$module$1 = null;
+  this.textShadow$1 = null;
+  this.transitionDelay$1 = null;
+  this.transition$1 = null;
+  this.transitionTimingFunction$1 = null;
+  this.transitionDuration$1 = null;
+  this.transitionProperty$1 = null;
+  this.visibility$module$1 = null;
+  this.whiteSpace$module$1 = null;
+  this.wordSpacing$1 = null;
+  this.zIndex$1 = null;
+  this.flex$1 = null;
+  this.flexBasis$1 = null;
+  this.flexGrow$1 = null;
+  this.flexShrink$1 = null;
+  this.alignContent$module$1 = null;
+  this.alignSelf$module$1 = null;
+  this.flexWrap$module$1 = null;
+  this.alignItems$module$1 = null;
+  this.justifyContent$module$1 = null;
+  this.flexDirection$module$1 = null;
+  this.href$1 = null;
+  this.alt$1 = null;
+  this.rel$1 = null;
+  this.src$1 = null;
+  this.xmlns$1 = null;
+  this.accept$1 = null;
+  this.charset$1 = null;
+  this.disabled$1 = null;
+  this.for$1 = null;
+  this.rows$1 = null;
+  this.cols$1 = null;
+  this.role$1 = null;
+  this.content$1 = null;
+  this.httpEquiv$1 = null;
+  this.media$1 = null;
+  this.colspan$1 = null;
+  this.rowspan$1 = null;
+  this.aria$module$1 = null;
+  this.scoped$1 = null;
+  this.high$1 = null;
+  this.low$1 = null;
+  this.optimum$1 = null;
+  this.unselectable$1 = null;
+  this.onblur$1 = null;
+  this.onchange$1 = null;
+  this.onfocus$1 = null;
+  this.onselect$1 = null;
+  this.onsubmit$1 = null;
+  this.onreset$1 = null;
+  this.oncontextmenu$1 = null;
+  this.oninput$1 = null;
+  this.oninvalid$1 = null;
+  this.onsearch$1 = null;
+  this.selected$1 = null;
+  this.onload$1 = null;
+  this.onafterprint$1 = null;
+  this.onbeforeprint$1 = null;
+  this.onbeforeunload$1 = null;
+  this.onhashchange$1 = null;
+  this.onmessage$1 = null;
+  this.onoffline$1 = null;
+  this.ononline$1 = null;
+  this.onpagehide$1 = null;
+  this.onpageshow$1 = null;
+  this.onpopstate$1 = null;
+  this.onresize$1 = null;
+  this.onstorage$1 = null;
+  this.onunload$1 = null;
+  this.onclick$1 = null;
+  this.ondblclick$1 = null;
+  this.ondrag$1 = null;
+  this.ondragend$1 = null;
+  this.ondragenter$1 = null;
+  this.ondragleave$1 = null;
+  this.ondragover$1 = null;
+  this.ondragstart$1 = null;
+  this.ondrop$1 = null;
+  this.onmousedown$1 = null;
+  this.onmousemove$1 = null;
+  this.onmouseout$1 = null;
+  this.onmouseover$1 = null;
+  this.onmouseup$1 = null;
+  this.onscroll$1 = null;
+  this.onwheel$1 = null;
+  this.onkeydown$1 = null;
+  this.onkeyup$1 = null;
+  this.onkeypress$1 = null;
+  this.onshow$1 = null;
+  this.ontoggle$1 = null;
+  this.onabort$1 = null;
+  this.oncanplay$1 = null;
+  this.oncanplaythrough$1 = null;
+  this.oncuechange$1 = null;
+  this.ondurationchange$1 = null;
+  this.onemptied$1 = null;
+  this.onended$1 = null;
+  this.onloadeddata$1 = null;
+  this.onloadedmetadata$1 = null;
+  this.onloadstart$1 = null;
+  this.onpause$1 = null;
+  this.onplay$1 = null;
+  this.onplaying$1 = null;
+  this.onprogress$1 = null;
+  this.onratechange$1 = null;
+  this.onseeked$1 = null;
+  this.onseeking$1 = null;
+  this.onstalled$1 = null;
+  this.onsuspend$1 = null;
+  this.ontimeupdate$1 = null;
+  this.onvolumechange$1 = null;
+  this.onwaiting$1 = null;
+  this.onerror$1 = null;
+  this.oncopy$1 = null;
+  this.oncut$1 = null;
+  this.onpaste$1 = null;
+  this.action$1 = null;
+  this.autocomplete$1 = null;
+  this.autofocus$1 = null;
+  this.checked$1 = null;
+  this.enctype$1 = null;
+  this.formA$1 = null;
+  this.formaction$1 = null;
+  this.formenctype$1 = null;
+  this.formmethod$1 = null;
+  this.formnovalidate$1 = null;
+  this.formtarget$1 = null;
+  this.heightA$1 = null;
+  this.list$1 = null;
+  this.max$1 = null;
+  this.min$1 = null;
+  this.multiple$1 = null;
+  this.maxlength$1 = null;
+  this.method$1 = null;
+  this.name$1 = null;
+  this.pattern$1 = null;
+  this.placeholder$1 = null;
+  this.readonly$1 = null;
+  this.required$1 = null;
+  this.size$1 = null;
+  this.step$1 = null;
+  this.target$1 = null;
+  this.type$1 = null;
+  this.tpe$1 = null;
+  this.value$1 = null;
+  this.widthA$1 = null;
+  this.accesskey$1 = null;
+  this.class$1 = null;
+  this.cls$1 = null;
+  this.contenteditable$1 = null;
+  this.contextmenu$1 = null;
+  this.data$module$1 = null;
+  this.dir$1 = null;
+  this.draggable$1 = null;
+  this.dropzone$1 = null;
+  this.hidden$1 = null;
+  this.id$1 = null;
+  this.lang$1 = null;
+  this.spellcheck$1 = null;
+  this.style$1 = null;
+  this.tabindex$1 = null;
+  this.title$1 = null;
+  this.translate$1 = null;
+  this.bitmap$0$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$1$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$2$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$3$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$4$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
+}
+$c_Lscalatags_JsDom$all$.prototype = new $h_O();
+$c_Lscalatags_JsDom$all$.prototype.constructor = $c_Lscalatags_JsDom$all$;
+/** @constructor */
+function $h_Lscalatags_JsDom$all$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$all$.prototype = $c_Lscalatags_JsDom$all$.prototype;
+$c_Lscalatags_JsDom$all$.prototype.bindJsAnyLike__F1__Lscalatags_generic_AttrValue = (function(ev) {
+  return $f_Lscalatags_LowPriorityImplicits__bindJsAnyLike__F1__Lscalatags_generic_AttrValue(this, ev)
+});
+$c_Lscalatags_JsDom$all$.prototype.genericAttr__Lscalatags_JsDom$GenericAttr = (function() {
+  return $f_Lscalatags_JsDom$Aggregate__genericAttr__Lscalatags_JsDom$GenericAttr(this)
+});
+$c_Lscalatags_JsDom$all$.prototype.genericStyle__Lscalatags_JsDom$GenericStyle = (function() {
+  return $f_Lscalatags_JsDom$Aggregate__genericStyle__Lscalatags_JsDom$GenericStyle(this)
+});
+$c_Lscalatags_JsDom$all$.prototype.genericPixelStyle__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue = (function(ev) {
+  return $f_Lscalatags_JsDom$Aggregate__genericPixelStyle__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue(this, ev)
+});
+$c_Lscalatags_JsDom$all$.prototype.genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue = (function(ev) {
+  return $f_Lscalatags_JsDom$Aggregate__genericPixelStylePx__Lscalatags_generic_StyleValue__Lscalatags_generic_PixelStyleValue(this, ev)
+});
+$c_Lscalatags_JsDom$all$.prototype.stringFrag__T__Lscalatags_JsDom$StringFrag = (function(v) {
+  return $f_Lscalatags_JsDom$Aggregate__stringFrag__T__Lscalatags_JsDom$StringFrag(this, v)
+});
+$c_Lscalatags_JsDom$all$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag = (function(tag, $void, namespaceConfig) {
+  return $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(this, tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$all$.prototype.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(s, $void, ns) {
+  return $f_Lscalatags_jsdom_TagFactory__typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag(this, s, $void, ns)
+});
+$c_Lscalatags_JsDom$all$.prototype.typedTag$default$2__Z = (function() {
+  return $f_Lscalatags_jsdom_TagFactory__typedTag$default$2__Z(this)
+});
+$c_Lscalatags_JsDom$all$.prototype.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr = (function(s, ns, raw) {
+  return $f_Lscalatags_generic_Util__attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr(this, s, ns, raw)
+});
+$c_Lscalatags_JsDom$all$.prototype.attr$default$2__Lscalatags_generic_Namespace = (function() {
+  return $f_Lscalatags_generic_Util__attr$default$2__Lscalatags_generic_Namespace(this)
+});
+$c_Lscalatags_JsDom$all$.prototype.attr$default$3__Z = (function() {
+  return $f_Lscalatags_generic_Util__attr$default$3__Z(this)
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$RawFrag$und$eq__Lscalatags_JsDom$RawFrag$__V = (function(x$1) {
+  this.RawFrag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$StringFrag$und$eq__Lscalatags_JsDom$StringFrag$__V = (function(x$1) {
+  this.StringFrag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$HtmlTag$und$eq__Lscalatags_JsDom$TypedTag$__V = (function(x$1) {
+  this.HtmlTag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$SvgTag$und$eq__Lscalatags_JsDom$TypedTag$__V = (function(x$1) {
+  this.SvgTag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$Tag$und$eq__Lscalatags_JsDom$TypedTag$__V = (function(x$1) {
+  this.Tag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.stringStyle__Lscalatags_generic_StyleValue = (function() {
+  return this.stringStyle$1
+});
+$c_Lscalatags_JsDom$all$.prototype.booleanStyle__Lscalatags_generic_StyleValue = (function() {
+  return this.booleanStyle$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$stringAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.stringAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$booleanAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.booleanAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$byteAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.byteAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$shortAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.shortAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$intAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.intAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$longAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.longAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$floatAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.floatAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$doubleAttr$und$eq__Lscalatags_generic_AttrValue__V = (function(x$1) {
+  this.doubleAttr$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$stringStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.stringStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$booleanStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.booleanStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$byteStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.byteStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$shortStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.shortStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$intStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.intStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$longStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.longStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$floatStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.floatStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$doubleStyle$und$eq__Lscalatags_generic_StyleValue__V = (function(x$1) {
+  this.doubleStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$stringPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.stringPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$booleanPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.booleanPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$bytePixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.bytePixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$shortPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.shortPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$intPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.intPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$longPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.longPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$floatPixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.floatPixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$Aggregate$$undsetter$und$doublePixelStyle$und$eq__Lscalatags_generic_PixelStyleValue__V = (function(x$1) {
+  this.doublePixelStyle$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.p$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(32768, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.p$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__p__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(32768, 0))
+  };
+  return this.p$1
+});
+$c_Lscalatags_JsDom$all$.prototype.p__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(32768, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.p$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.p$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.div$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.div$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__div__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0))
+  };
+  return this.div$1
+});
+$c_Lscalatags_JsDom$all$.prototype.div__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.div$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.div$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.img$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8192)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.img$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__img__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8192))
+  };
+  return this.img$1
+});
+$c_Lscalatags_JsDom$all$.prototype.img__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8192)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.img$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.img$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.src$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1073741824, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.src$1 = $f_Lscalatags_generic_Attrs__src__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1073741824, 0))
+  };
+  return this.src$1
+});
+$c_Lscalatags_JsDom$all$.prototype.src__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1073741824, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.src$lzycompute__p1__Lscalatags_generic_Attr() : this.src$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.scalatags$generic$MouseEventAttrs$$undsetter$und$ondrag$und$eq__Lscalatags_generic_Attr__V = (function(x$1) {
+  this.ondrag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(tag, $void, namespaceConfig) {
+  return this.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$all$.prototype.genericStyle__Lscalatags_generic_StyleValue = (function() {
+  return this.genericStyle__Lscalatags_JsDom$GenericStyle()
+});
+$c_Lscalatags_JsDom$all$.prototype.genericAttr__Lscalatags_generic_AttrValue = (function() {
+  return this.genericAttr__Lscalatags_JsDom$GenericAttr()
+});
+$c_Lscalatags_JsDom$all$.prototype.img__Lscalatags_generic_TypedTag = (function() {
+  return this.img__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.div__Lscalatags_generic_TypedTag = (function() {
+  return this.div__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.p__Lscalatags_generic_TypedTag = (function() {
+  return this.p__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$all$ = this;
+  $f_Lscalatags_generic_LowPriUtil__$$init$__V(this);
+  $f_Lscalatags_generic_Util__$$init$__V(this);
+  $f_Lscalatags_jsdom_TagFactory__$$init$__V(this);
+  $f_Lscalatags_JsDom$Cap__$$init$__V(this);
+  $f_Lscalatags_generic_GlobalAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_InputAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_ClipboardEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_SharedEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_MediaEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_MiscellaneousEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_KeyboardEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_MouseEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_WindowEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_FormEventAttrs__$$init$__V(this);
+  $f_Lscalatags_generic_Attrs__$$init$__V(this);
+  $f_Lscalatags_generic_StyleMisc__$$init$__V(this);
+  $f_Lscalatags_generic_Styles__$$init$__V(this);
+  $f_Lscalatags_jsdom_Tags__$$init$__V(this);
+  $f_Lscalatags_DataConverters__$$init$__V(this);
+  $f_Lscalatags_generic_Aggregate__$$init$__V(this);
+  $f_Lscalatags_JsDom$Aggregate__$$init$__V(this);
+  $f_Lscalatags_LowPriorityImplicits__$$init$__V(this);
+  return this
+});
+var $d_Lscalatags_JsDom$all$ = new $TypeData().initClass({
+  Lscalatags_JsDom$all$: 0
+}, false, "scalatags.JsDom$all$", {
+  Lscalatags_JsDom$all$: 1,
+  O: 1,
+  Lscalatags_JsDom$Cap: 1,
+  Lscalatags_generic_Util: 1,
+  Lscalatags_generic_LowPriUtil: 1,
+  Lscalatags_jsdom_TagFactory: 1,
+  Lscalatags_generic_Attrs: 1,
+  Lscalatags_generic_InputAttrs: 1,
+  Lscalatags_generic_GlobalAttrs: 1,
+  Lscalatags_generic_ClipboardEventAttrs: 1,
+  Lscalatags_generic_MediaEventAttrs: 1,
+  Lscalatags_generic_SharedEventAttrs: 1,
+  Lscalatags_generic_MiscellaneousEventAttrs: 1,
+  Lscalatags_generic_KeyboardEventAttrs: 1,
+  Lscalatags_generic_MouseEventAttrs: 1,
+  Lscalatags_generic_WindowEventAttrs: 1,
+  Lscalatags_generic_FormEventAttrs: 1,
+  Lscalatags_generic_Styles: 1,
+  Lscalatags_generic_StyleMisc: 1,
+  Lscalatags_jsdom_Tags: 1,
+  Lscalatags_generic_Tags: 1,
+  Lscalatags_DataConverters: 1,
+  Lscalatags_JsDom$Aggregate: 1,
+  Lscalatags_generic_Aggregate: 1,
+  Lscalatags_generic_Aliases: 1,
+  Lscalatags_LowPriorityImplicits: 1
+});
+$c_Lscalatags_JsDom$all$.prototype.$classData = $d_Lscalatags_JsDom$all$;
+var $n_Lscalatags_JsDom$all$ = (void 0);
+function $m_Lscalatags_JsDom$all$() {
+  if ((!$n_Lscalatags_JsDom$all$)) {
+    $n_Lscalatags_JsDom$all$ = new $c_Lscalatags_JsDom$all$().init___()
+  };
+  return $n_Lscalatags_JsDom$all$
 }
 /** @constructor */
 function $c_sc_AbstractSet() {
@@ -16282,6 +18874,9 @@ $h_sci_WrappedString.prototype = $c_sci_WrappedString.prototype;
 $c_sci_WrappedString.prototype.apply__I__C = (function(n) {
   return $f_sci_StringLike__apply__I__C(this, n)
 });
+$c_sci_WrappedString.prototype.r__sc_Seq__s_util_matching_Regex = (function(groupNames) {
+  return $f_sci_StringLike__r__sc_Seq__s_util_matching_Regex(this, groupNames)
+});
 $c_sci_WrappedString.prototype.scala$collection$IndexedSeqOptimized$$super$sameElements__sc_GenIterable__Z = (function(that) {
   return $f_sc_IterableLike__sameElements__sc_GenIterable__Z(this, that)
 });
@@ -16993,6 +19588,9 @@ $c_scm_StringBuilder.prototype.mapResult__F1__scm_Builder = (function(f) {
 $c_scm_StringBuilder.prototype.$$plus$plus$eq__sc_TraversableOnce__scg_Growable = (function(xs) {
   return $f_scg_Growable__$$plus$plus$eq__sc_TraversableOnce__scg_Growable(this, xs)
 });
+$c_scm_StringBuilder.prototype.r__sc_Seq__s_util_matching_Regex = (function(groupNames) {
+  return $f_sci_StringLike__r__sc_Seq__s_util_matching_Regex(this, groupNames)
+});
 $c_scm_StringBuilder.prototype.scala$collection$IndexedSeqOptimized$$super$sameElements__sc_GenIterable__Z = (function(that) {
   return $f_sc_IterableLike__sameElements__sc_GenIterable__Z(this, that)
 });
@@ -17661,6 +20259,9 @@ $e.echo = (function(arg$1) {
 });
 $e.greet = (function() {
   $m_Lindex_HWApp$().greet__V()
+});
+$e.makeRequest = (function() {
+  $m_Lindex_HWApp$().makeRequest__V()
 });
 $e.isEmpty = (function(arg$1) {
   var prep0 = $as_T(arg$1);
